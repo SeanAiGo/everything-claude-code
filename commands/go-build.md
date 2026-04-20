@@ -1,12 +1,14 @@
 ---
-description: Fix Go build errors, go vet warnings, and linter issues incrementally. Invokes the go-build-resolver agent for minimal, surgical fixes.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Fix Go build errors, go vet warnings, and linter issues incrementally. Invokes the go-build-resolver agent for minimal, surgical fixes.
 ---
 
 # Go Build and Fix
+> 🇹🇼 命令指示
 
 This command invokes the **go-build-resolver** agent to incrementally fix Go build errors with minimal changes.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Run Diagnostics**: Execute `go build`, `go vet`, `staticcheck`
 2. **Parse Errors**: Group by file and sort by severity
@@ -15,6 +17,7 @@ This command invokes the **go-build-resolver** agent to incrementally fix Go bui
 5. **Report Summary**: Show what was fixed and what remains
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/go-build` when:
 - `go build ./...` fails with errors
@@ -24,32 +27,40 @@ Use `/go-build` when:
 - After pulling changes that break the build
 
 ## Diagnostic Commands Run
+> 🇹🇼 命令指示
 
 ```bash
 # Primary build check
+> 🇹🇼 命令指示
 go build ./...
 
 # Static analysis
+> 🇹🇼 命令指示
 go vet ./...
 
 # Extended linting (if available)
+> 🇹🇼 命令指示
 staticcheck ./...
 golangci-lint run
 
 # Module issues
+> 🇹🇼 命令指示
 go mod verify
 go mod tidy -v
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ```text
 User: /go-build
 
 Agent:
 # Go Build Resolution
+> 🇹🇼 命令指示
 
 ## Initial Diagnostics
+> 🇹🇼 命令指示
 
 ```bash
 $ go build ./...
@@ -61,6 +72,7 @@ internal/handler/api.go:58:2: missing return at end of function
 Errors found: 3
 
 ## Fix 1: Undefined Identifier
+> 🇹🇼 命令指示
 
 File: internal/service/user.go:25
 Error: undefined: UserRepository
@@ -79,9 +91,11 @@ var repo repository.UserRepository
 ```bash
 $ go build ./...
 # 2 errors remaining
+> 🇹🇼 命令指示
 ```
 
 ## Fix 2: Type Mismatch
+> 🇹🇼 命令指示
 
 File: internal/handler/api.go:42
 Error: cannot use x (type string) as type int
@@ -97,9 +111,11 @@ count, _ := strconv.Atoi(countStr)
 ```bash
 $ go build ./...
 # 1 error remaining
+> 🇹🇼 命令指示
 ```
 
 ## Fix 3: Missing Return
+> 🇹🇼 命令指示
 
 File: internal/handler/api.go:58
 Error: missing return at end of function
@@ -118,13 +134,16 @@ func GetUser(id string) (*User, error) {
 ```bash
 $ go build ./...
 # Build successful!
+> 🇹🇼 命令指示
 ```
 
 ## Final Verification
+> 🇹🇼 命令指示
 
 ```bash
 $ go vet ./...
 # No issues
+> 🇹🇼 命令指示
 
 $ go test ./...
 ok      project/internal/service   0.015s
@@ -132,6 +151,7 @@ ok      project/internal/handler   0.023s
 ```
 
 ## Summary
+> 🇹🇼 命令指示
 
 | Metric | Count |
 |--------|-------|
@@ -144,6 +164,7 @@ Build Status: PASS: SUCCESS
 ```
 
 ## Common Errors Fixed
+> 🇹🇼 命令指示
 
 | Error | Typical Fix |
 |-------|-------------|
@@ -156,6 +177,7 @@ Build Status: PASS: SUCCESS
 | `cannot find package` | `go get` or `go mod tidy` |
 
 ## Fix Strategy
+> 🇹🇼 命令指示
 
 1. **Build errors first** - Code must compile
 2. **Vet warnings second** - Fix suspicious constructs
@@ -164,6 +186,7 @@ Build Status: PASS: SUCCESS
 5. **Minimal changes** - Don't refactor, just fix
 
 ## Stop Conditions
+> 🇹🇼 命令指示
 
 The agent will stop and report if:
 - Same error persists after 3 attempts
@@ -172,12 +195,14 @@ The agent will stop and report if:
 - Missing external dependencies
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/go-test` - Run tests after build succeeds
 - `/go-review` - Review code quality
 - `/verify` - Full verification loop
 
 ## Related
+> 🇹🇼 命令指示
 
 - Agent: `agents/go-build-resolver.md`
 - Skill: `skills/golang-patterns/`

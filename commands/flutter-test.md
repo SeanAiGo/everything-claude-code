@@ -1,12 +1,14 @@
 ---
-description: Run Flutter/Dart tests, report failures, and incrementally fix test issues. Covers unit, widget, golden, and integration tests.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Run Flutter/Dart tests, report failures, and incrementally fix test issues. Covers unit, widget, golden, and integration tests.
 ---
 
 # Flutter Test
+> 🇹🇼 命令指示
 
 This command runs the Flutter test suite and reports results. When failures occur, it diagnoses and fixes issues incrementally.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Run Tests**: Execute `flutter test` (or scope to changed files)
 2. **Parse Failures**: Identify failing tests by type and cause
@@ -15,6 +17,7 @@ This command runs the Flutter test suite and reports results. When failures occu
 5. **Report**: Show coverage summary and remaining failures
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/flutter-test` when:
 - After implementing a feature to verify nothing broke
@@ -24,36 +27,46 @@ Use `/flutter-test` when:
 - Before submitting a PR
 
 ## Commands Run
+> 🇹🇼 命令指示
 
 ```bash
 # Run all tests
+> 🇹🇼 命令指示
 flutter test 2>&1
 
 # Run with coverage
+> 🇹🇼 命令指示
 flutter test --coverage 2>&1
 
 # Run specific test file
+> 🇹🇼 命令指示
 flutter test test/unit/domain/usecases/get_user_test.dart 2>&1
 
 # Run tests matching a name pattern
+> 🇹🇼 命令指示
 flutter test --name "CartBloc" 2>&1
 
 # Run integration tests (requires device/emulator)
+> 🇹🇼 命令指示
 flutter test integration_test/ 2>&1
 
 # Update golden files when intentional visual changes are made
+> 🇹🇼 命令指示
 flutter test --update-goldens 2>&1
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ````text
 User: /flutter-test
 
 Agent:
 # Flutter Test Run
+> 🇹🇼 命令指示
 
 ## Test Execution
+> 🇹🇼 命令指示
 
 ```
 $ flutter test
@@ -73,6 +86,7 @@ FAILED: test/widget/cart_page_test.dart
 ```
 
 ## Fix 1: Repository Test
+> 🇹🇼 命令指示
 
 File: test/unit/data/user_repository_test.dart
 Failure: `getById` returns a user when it should return null for missing ID
@@ -86,6 +100,7 @@ $ flutter test test/unit/data/user_repository_test.dart
 ```
 
 ## Fix 2: Widget Test
+> 🇹🇼 命令指示
 
 File: test/widget/cart_page_test.dart
 Failure: Empty state text widget not found
@@ -99,6 +114,7 @@ $ flutter test test/widget/cart_page_test.dart
 ```
 
 ## Final Run
+> 🇹🇼 命令指示
 
 ```
 $ flutter test --coverage
@@ -107,6 +123,7 @@ Coverage: 84.2% (target: 80%)
 ```
 
 ## Summary
+> 🇹🇼 命令指示
 
 | Metric | Value |
 |--------|-------|
@@ -119,6 +136,7 @@ Test Status: PASS ✓
 ````
 
 ## Common Test Failures
+> 🇹🇼 命令指示
 
 | Failure | Typical Fix |
 |---------|-------------|
@@ -131,12 +149,14 @@ Test Status: PASS ✓
 | `pumpAndSettle timed out` | Replace with explicit `pump(Duration)` calls |
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/flutter-build` — Fix build errors before running tests
 - `/flutter-review` — Review code after tests pass
 - `/tdd` — Test-driven development workflow
 
 ## Related
+> 🇹🇼 命令指示
 
 - Agent: `agents/flutter-reviewer.md`
 - Agent: `agents/dart-build-resolver.md`

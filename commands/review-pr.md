@@ -1,16 +1,18 @@
 ---
-description: Comprehensive PR review using specialized agents
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Comprehensive PR review using specialized agents
 ---
 
 Run a comprehensive multi-perspective review of a pull request.
 
 ## Usage
+> 🇹🇼 命令指示
 
 `/review-pr [PR-number-or-URL] [--focus=comments|tests|errors|types|code|simplify]`
 
 If no PR is specified, review the current branch's PR. If no focus is specified, run the full review stack.
 
 ## Steps
+> 🇹🇼 命令指示
 
 1. Identify the PR:
    - use `gh pr view` to get PR details, changed files, and diff
@@ -29,6 +31,7 @@ If no PR is specified, review the current branch's PR. If no focus is specified,
 5. Report findings grouped by severity
 
 ## Confidence Rule
+> 🇹🇼 命令指示
 
 Only report issues with confidence >= 80:
 

@@ -1,12 +1,14 @@
 ---
-description: Restate requirements, assess risks, and create step-by-step implementation plan. WAIT for user CONFIRM before touching any code.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Restate requirements, assess risks, and create step-by-step implementation plan. WAIT for user CONFIRM before touching any code.
 ---
 
 # Plan Command
+> 🇹🇼 命令指示
 
 This command invokes the **planner** agent to create a comprehensive implementation plan before writing any code.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Restate Requirements** - Clarify what needs to be built
 2. **Identify Risks** - Surface potential issues and blockers
@@ -14,6 +16,7 @@ This command invokes the **planner** agent to create a comprehensive implementat
 4. **Wait for Confirmation** - MUST receive user approval before proceeding
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/plan` when:
 - Starting a new feature
@@ -23,6 +26,7 @@ Use `/plan` when:
 - Requirements are unclear or ambiguous
 
 ## How It Works
+> 🇹🇼 命令指示
 
 The planner agent will:
 
@@ -34,55 +38,66 @@ The planner agent will:
 6. **Present the plan** and WAIT for your explicit confirmation
 
 ## Example Usage
+> 🇹🇼 命令指示
 
 ```
 User: /plan I need to add real-time notifications when markets resolve
 
 Agent (planner):
 # Implementation Plan: Real-Time Market Resolution Notifications
+> 🇹🇼 命令指示
 
 ## Requirements Restatement
+> 🇹🇼 命令指示
 - Send notifications to users when markets they're watching resolve
 - Support multiple notification channels (in-app, email, webhook)
 - Ensure notifications are delivered reliably
 - Include market outcome and user's position result
 
 ## Implementation Phases
+> 🇹🇼 命令指示
 
 ### Phase 1: Database Schema
+> 🇹🇼 命令指示
 - Add notifications table with columns: id, user_id, market_id, type, status, created_at
 - Add user_notification_preferences table for channel preferences
 - Create indexes on user_id and market_id for performance
 
 ### Phase 2: Notification Service
+> 🇹🇼 命令指示
 - Create notification service in lib/notifications.ts
 - Implement notification queue using BullMQ/Redis
 - Add retry logic for failed deliveries
 - Create notification templates
 
 ### Phase 3: Integration Points
+> 🇹🇼 命令指示
 - Hook into market resolution logic (when status changes to "resolved")
 - Query all users with positions in market
 - Enqueue notifications for each user
 
 ### Phase 4: Frontend Components
+> 🇹🇼 命令指示
 - Create NotificationBell component in header
 - Add NotificationList modal
 - Implement real-time updates via Supabase subscriptions
 - Add notification preferences page
 
 ## Dependencies
+> 🇹🇼 命令指示
 - Redis (for queue)
 - Email service (SendGrid/Resend)
 - Supabase real-time subscriptions
 
 ## Risks
+> 🇹🇼 命令指示
 - HIGH: Email deliverability (SPF/DKIM required)
 - MEDIUM: Performance with 1000+ users per market
 - MEDIUM: Notification spam if markets resolve frequently
 - LOW: Real-time subscription overhead
 
 ## Estimated Complexity: MEDIUM
+> 🇹🇼 命令指示
 - Backend: 4-6 hours
 - Frontend: 3-4 hours
 - Testing: 2-3 hours
@@ -92,6 +107,7 @@ Agent (planner):
 ```
 
 ## Important Notes
+> 🇹🇼 命令指示
 
 **CRITICAL**: The planner agent will **NOT** write any code until you explicitly confirm the plan with "yes" or "proceed" or similar affirmative response.
 
@@ -101,6 +117,7 @@ If you want changes, respond with:
 - "skip phase 2 and do phase 3 first"
 
 ## Integration with Other Commands
+> 🇹🇼 命令指示
 
 After planning:
 - Use `/tdd` to implement with test-driven development
@@ -110,6 +127,7 @@ After planning:
 > **Need deeper planning?** Use `/prp-plan` for artifact-producing planning with PRD integration, codebase analysis, and pattern extraction. Use `/prp-implement` to execute those plans with rigorous validation loops.
 
 ## Related Agents
+> 🇹🇼 命令指示
 
 This command invokes the `planner` agent provided by ECC.
 

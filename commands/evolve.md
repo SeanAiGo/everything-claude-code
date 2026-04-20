@@ -1,12 +1,14 @@
 ---
 name: evolve
-description: Analyze instincts and suggest or generate evolved structures
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Analyze instincts and suggest or generate evolved structures
 command: true
 ---
 
 # Evolve Command
+> 🇹🇼 命令指示
 
 ## Implementation
+> 🇹🇼 命令指示
 
 Run the instinct CLI using the plugin root path:
 
@@ -26,6 +28,7 @@ Analyzes instincts and clusters related ones into higher-level structures:
 - **Agents**: When instincts describe complex, multi-step processes
 
 ## Usage
+> 🇹🇼 命令指示
 
 ```
 /evolve                    # Analyze all instincts and suggest evolutions
@@ -33,8 +36,10 @@ Analyzes instincts and clusters related ones into higher-level structures:
 ```
 
 ## Evolution Rules
+> 🇹🇼 命令指示
 
 ### → Command (User-Invoked)
+> 🇹🇼 命令指示
 When instincts describe actions a user would explicitly request:
 - Multiple instincts about "when user asks to..."
 - Instincts with triggers like "when creating a new X"
@@ -48,6 +53,7 @@ Example:
 → Creates: **new-table** command
 
 ### → Skill (Auto-Triggered)
+> 🇹🇼 命令指示
 When instincts describe behaviors that should happen automatically:
 - Pattern-matching triggers
 - Error handling responses
@@ -61,6 +67,7 @@ Example:
 → Creates: `functional-patterns` skill
 
 ### → Agent (Needs Depth/Isolation)
+> 🇹🇼 命令指示
 When instincts describe complex, multi-step processes that benefit from isolation:
 - Debugging workflows
 - Refactoring sequences
@@ -75,6 +82,7 @@ Example:
 → Creates: **debugger** agent
 
 ## What to Do
+> 🇹🇼 命令指示
 
 1. Detect current project context
 2. Read project + global instincts (project takes precedence on ID conflicts)
@@ -89,6 +97,7 @@ Example:
    - Global fallback: `~/.claude/homunculus/evolved/`
 
 ## Output Format
+> 🇹🇼 命令指示
 
 ```
 ============================================================
@@ -100,6 +109,7 @@ Example:
 High confidence instincts (>=80%): 5
 
 ## SKILL CANDIDATES
+> 🇹🇼 命令指示
 1. Cluster: "adding tests"
    Instincts: 3
    Avg confidence: 82%
@@ -107,23 +117,28 @@ High confidence instincts (>=80%): 5
    Scopes: project
 
 ## COMMAND CANDIDATES (2)
+> 🇹🇼 命令指示
   /adding-tests
     From: test-first-workflow [project]
     Confidence: 84%
 
 ## AGENT CANDIDATES (1)
+> 🇹🇼 命令指示
   adding-tests-agent
     Covers 3 instincts
     Avg confidence: 82%
 ```
 
 ## Flags
+> 🇹🇼 命令指示
 
 - `--generate`: Generate evolved files in addition to analysis output
 
 ## Generated File Format
+> 🇹🇼 命令指示
 
 ### Command
+> 🇹🇼 命令指示
 ```markdown
 ---
 name: new-table
@@ -136,15 +151,18 @@ evolved_from:
 ---
 
 # New Table Command
+> 🇹🇼 命令指示
 
 [Generated content based on clustered instincts]
 
 ## Steps
+> 🇹🇼 命令指示
 1. ...
 2. ...
 ```
 
 ### Skill
+> 🇹🇼 命令指示
 ```markdown
 ---
 name: functional-patterns
@@ -156,11 +174,13 @@ evolved_from:
 ---
 
 # Functional Patterns Skill
+> 🇹🇼 命令指示
 
 [Generated content based on clustered instincts]
 ```
 
 ### Agent
+> 🇹🇼 命令指示
 ```markdown
 ---
 name: debugger
@@ -173,6 +193,7 @@ evolved_from:
 ---
 
 # Debugger Agent
+> 🇹🇼 命令指示
 
 [Generated content based on clustered instincts]
 ```

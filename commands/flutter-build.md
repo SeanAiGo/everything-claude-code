@@ -1,12 +1,14 @@
 ---
-description: Fix Dart analyzer errors and Flutter build failures incrementally. Invokes the dart-build-resolver agent for minimal, surgical fixes.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Fix Dart analyzer errors and Flutter build failures incrementally. Invokes the dart-build-resolver agent for minimal, surgical fixes.
 ---
 
 # Flutter Build and Fix
+> 🇹🇼 命令指示
 
 This command invokes the **dart-build-resolver** agent to incrementally fix Dart/Flutter build errors with minimal changes.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Run Diagnostics**: Execute `flutter analyze`, `flutter pub get`
 2. **Parse Errors**: Group by file and sort by severity
@@ -15,6 +17,7 @@ This command invokes the **dart-build-resolver** agent to incrementally fix Dart
 5. **Report Summary**: Show what was fixed and what remains
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/flutter-build` when:
 - `flutter analyze` reports errors
@@ -24,31 +27,39 @@ Use `/flutter-build` when:
 - After pulling changes that break the build
 
 ## Diagnostic Commands Run
+> 🇹🇼 命令指示
 
 ```bash
 # Analysis
+> 🇹🇼 命令指示
 flutter analyze 2>&1
 
 # Dependencies
+> 🇹🇼 命令指示
 flutter pub get 2>&1
 
 # Code generation (if project uses build_runner)
+> 🇹🇼 命令指示
 dart run build_runner build --delete-conflicting-outputs 2>&1
 
 # Platform builds
+> 🇹🇼 命令指示
 flutter build apk 2>&1
 flutter build web 2>&1
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ````text
 User: /flutter-build
 
 Agent:
 # Flutter Build Resolution
+> 🇹🇼 命令指示
 
 ## Initial Diagnostics
+> 🇹🇼 命令指示
 
 ```
 $ flutter analyze
@@ -67,6 +78,7 @@ Analyzing project...
 ```
 
 ## Fix 1: Null Safety
+> 🇹🇼 命令指示
 
 File: lib/features/user/data/user_repository_impl.dart:34
 Error: A value of type 'String?' can't be assigned to type 'String'
@@ -86,6 +98,7 @@ $ flutter analyze
 ```
 
 ## Fix 2: Immutable List
+> 🇹🇼 命令指示
 
 File: lib/features/cart/presentation/cart_page.dart:58
 Error: The method 'add' isn't defined for the type 'List<Item>'
@@ -108,6 +121,7 @@ No issues found!
 ```
 
 ## Final Verification
+> 🇹🇼 命令指示
 
 ```
 $ flutter test
@@ -115,6 +129,7 @@ All tests passed.
 ```
 
 ## Summary
+> 🇹🇼 命令指示
 
 | Metric | Count |
 |--------|-------|
@@ -126,6 +141,7 @@ Build Status: PASS ✓
 ````
 
 ## Common Errors Fixed
+> 🇹🇼 命令指示
 
 | Error | Typical Fix |
 |-------|-------------|
@@ -137,6 +153,7 @@ Build Status: PASS ✓
 | `build_runner: Part of X expected` | Delete stale `.g.dart` and rebuild |
 
 ## Fix Strategy
+> 🇹🇼 命令指示
 
 1. **Analysis errors first** — code must be error-free
 2. **Warning triage second** — fix warnings that could cause runtime bugs
@@ -145,6 +162,7 @@ Build Status: PASS ✓
 5. **Minimal changes** — don't refactor, just fix
 
 ## Stop Conditions
+> 🇹🇼 命令指示
 
 The agent will stop and report if:
 - Same error persists after 3 attempts
@@ -153,12 +171,14 @@ The agent will stop and report if:
 - Package upgrade conflicts need user decision
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/flutter-test` — Run tests after build succeeds
 - `/flutter-review` — Review code quality
 - `/verify` — Full verification loop
 
 ## Related
+> 🇹🇼 命令指示
 
 - Agent: `agents/dart-build-resolver.md`
 - Skill: `skills/flutter-dart-code-review/`

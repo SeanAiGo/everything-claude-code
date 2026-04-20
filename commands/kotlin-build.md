@@ -1,12 +1,14 @@
 ---
-description: Fix Kotlin/Gradle build errors, compiler warnings, and dependency issues incrementally. Invokes the kotlin-build-resolver agent for minimal, surgical fixes.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Fix Kotlin/Gradle build errors, compiler warnings, and dependency issues incrementally. Invokes the kotlin-build-resolver agent for minimal, surgical fixes.
 ---
 
 # Kotlin Build and Fix
+> 🇹🇼 命令指示
 
 This command invokes the **kotlin-build-resolver** agent to incrementally fix Kotlin build errors with minimal changes.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Run Diagnostics**: Execute `./gradlew build`, `detekt`, `ktlintCheck`
 2. **Parse Errors**: Group by file and sort by severity
@@ -15,6 +17,7 @@ This command invokes the **kotlin-build-resolver** agent to incrementally fix Ko
 5. **Report Summary**: Show what was fixed and what remains
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/kotlin-build` when:
 - `./gradlew build` fails with errors
@@ -24,31 +27,39 @@ Use `/kotlin-build` when:
 - After pulling changes that break the build
 
 ## Diagnostic Commands Run
+> 🇹🇼 命令指示
 
 ```bash
 # Primary build check
+> 🇹🇼 命令指示
 ./gradlew build 2>&1
 
 # Static analysis
+> 🇹🇼 命令指示
 ./gradlew detekt 2>&1 || echo "detekt not configured"
 ./gradlew ktlintCheck 2>&1 || echo "ktlint not configured"
 
 # Dependency issues
+> 🇹🇼 命令指示
 ./gradlew dependencies --configuration runtimeClasspath 2>&1 | head -100
 
 # Optional deep refresh when caches or dependency metadata are suspect
+> 🇹🇼 命令指示
 ./gradlew build --refresh-dependencies
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ````text
 User: /kotlin-build
 
 Agent:
 # Kotlin Build Resolution
+> 🇹🇼 命令指示
 
 ## Initial Diagnostics
+> 🇹🇼 命令指示
 
 ```bash
 $ ./gradlew build
@@ -60,6 +71,7 @@ e: src/main/kotlin/com/example/routes/UserRoutes.kt:58:5 'when' expression must 
 Errors found: 3
 
 ## Fix 1: Unresolved Reference
+> 🇹🇼 命令指示
 
 File: src/main/kotlin/com/example/service/UserService.kt:25
 Error: Unresolved reference: UserRepository
@@ -73,9 +85,11 @@ import com.example.repository.UserRepository
 ```bash
 $ ./gradlew build
 # 2 errors remaining
+> 🇹🇼 命令指示
 ```
 
 ## Fix 2: Type Mismatch
+> 🇹🇼 命令指示
 
 File: src/main/kotlin/com/example/routes/UserRoutes.kt:42
 Error: Type mismatch: inferred type is String but Int was expected
@@ -91,9 +105,11 @@ val count = call.parameters["count"]?.toIntOrNull()
 ```bash
 $ ./gradlew build
 # 1 error remaining
+> 🇹🇼 命令指示
 ```
 
 ## Fix 3: Non-Exhaustive When
+> 🇹🇼 命令指示
 
 File: src/main/kotlin/com/example/routes/UserRoutes.kt:58
 Error: 'when' expression must be exhaustive
@@ -110,19 +126,24 @@ when (user.role) {
 ```bash
 $ ./gradlew build
 # Build successful!
+> 🇹🇼 命令指示
 ```
 
 ## Final Verification
+> 🇹🇼 命令指示
 
 ```bash
 $ ./gradlew detekt
 # No issues
+> 🇹🇼 命令指示
 
 $ ./gradlew test
 # All tests passed
+> 🇹🇼 命令指示
 ```
 
 ## Summary
+> 🇹🇼 命令指示
 
 | Metric | Count |
 |--------|-------|
@@ -135,6 +156,7 @@ Build Status: PASS: SUCCESS
 ````
 
 ## Common Errors Fixed
+> 🇹🇼 命令指示
 
 | Error | Typical Fix |
 |-------|-------------|
@@ -147,6 +169,7 @@ Build Status: PASS: SUCCESS
 | `Could not resolve dependency` | Fix version or add repository |
 
 ## Fix Strategy
+> 🇹🇼 命令指示
 
 1. **Build errors first** - Code must compile
 2. **Detekt violations second** - Fix code quality issues
@@ -155,6 +178,7 @@ Build Status: PASS: SUCCESS
 5. **Minimal changes** - Don't refactor, just fix
 
 ## Stop Conditions
+> 🇹🇼 命令指示
 
 The agent will stop and report if:
 - Same error persists after 3 attempts
@@ -163,12 +187,14 @@ The agent will stop and report if:
 - Missing external dependencies
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/kotlin-test` - Run tests after build succeeds
 - `/kotlin-review` - Review code quality
 - `/verify` - Full verification loop
 
 ## Related
+> 🇹🇼 命令指示
 
 - Agent: `agents/kotlin-build-resolver.md`
 - Skill: `skills/kotlin-patterns/`

@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個規則（Rule）定義檔案。此規則的範疇與目的：規範開發時應遵循的準則與最佳實踐。
+---
 # Rules
+> 🇹🇼 規則說明與指示
 ## Structure
 
 Rules are organized into a **common** layer plus **language-specific** directories:
@@ -31,6 +35,7 @@ rules/
 
 ```bash
 # Install common + one or more language-specific rule sets
+> 🇹🇼 規則說明與指示
 ./install.sh typescript
 ./install.sh python
 ./install.sh golang
@@ -39,6 +44,7 @@ rules/
 ./install.sh php
 
 # Install multiple languages at once
+> 🇹🇼 規則說明與指示
 ./install.sh typescript python
 ```
 
@@ -52,9 +58,11 @@ rules/
 
 ```bash
 # Install common rules (required for all projects)
+> 🇹🇼 規則說明與指示
 cp -r rules/common ~/.claude/rules/common
 
 # Install language-specific rules based on your project's tech stack
+> 🇹🇼 規則說明與指示
 cp -r rules/typescript ~/.claude/rules/typescript
 cp -r rules/python ~/.claude/rules/python
 cp -r rules/golang ~/.claude/rules/golang
@@ -63,6 +71,7 @@ cp -r rules/swift ~/.claude/rules/swift
 cp -r rules/php ~/.claude/rules/php
 
 # Attention ! ! ! Configure according to your actual project requirements; the configuration here is for reference only.
+> 🇹🇼 規則說明與指示
 ```
 
 ## Rules vs Skills

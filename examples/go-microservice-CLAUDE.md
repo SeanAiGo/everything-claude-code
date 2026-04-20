@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # Go Microservice — Project CLAUDE.md
+> 🇹🇼 說明與指示
 
 > Real-world example for a Go microservice with PostgreSQL, gRPC, and Docker.
 > Copy this to your project root and customize for your service.
@@ -200,17 +204,21 @@ func TestUserService_Create(t *testing.T) {
 
 ```bash
 # Database
+> 🇹🇼 說明與指示
 DATABASE_URL=postgres://user:pass@localhost:5432/myservice?sslmode=disable
 
 # gRPC
+> 🇹🇼 說明與指示
 GRPC_PORT=50051
 REST_PORT=8080
 
 # Auth
+> 🇹🇼 說明與指示
 JWT_SECRET=           # Load from vault in production
 TOKEN_EXPIRY=24h
 
 # Observability
+> 🇹🇼 說明與指示
 LOG_LEVEL=info        # debug, info, warn, error
 OTEL_ENDPOINT=        # OpenTelemetry collector
 ```
@@ -227,17 +235,21 @@ OTEL_ENDPOINT=        # OpenTelemetry collector
 
 ```bash
 # Unit tests (fast, no external deps)
+> 🇹🇼 說明與指示
 go test ./internal/... -short -count=1
 
 # Integration tests (requires Docker for testcontainers)
+> 🇹🇼 說明與指示
 go test ./internal/repository/... -count=1 -timeout 120s
 
 # All tests with coverage
+> 🇹🇼 說明與指示
 go test ./... -coverprofile=coverage.out -count=1
 go tool cover -func=coverage.out  # summary
 go tool cover -html=coverage.out  # browser
 
 # Race detector
+> 🇹🇼 說明與指示
 go test ./... -race -count=1
 ```
 
@@ -245,16 +257,20 @@ go test ./... -race -count=1
 
 ```bash
 # Planning
+> 🇹🇼 說明與指示
 /plan "Add rate limiting to user endpoints"
 
 # Development
+> 🇹🇼 說明與指示
 /go-test                  # TDD with Go-specific patterns
 
 # Review
+> 🇹🇼 說明與指示
 /go-review                # Go idioms, error handling, concurrency
 /security-scan            # Secrets and vulnerabilities
 
 # Before merge
+> 🇹🇼 說明與指示
 go vet ./...
 staticcheck ./...
 ```

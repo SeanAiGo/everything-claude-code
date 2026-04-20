@@ -5,6 +5,7 @@ paths:
   - "**/go.sum"
 ---
 # Go Security
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/security.md](../common/security.md) with Go specific content.
 

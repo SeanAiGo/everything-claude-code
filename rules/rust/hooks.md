@@ -4,6 +4,7 @@ paths:
   - "**/Cargo.toml"
 ---
 # Rust Hooks
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/hooks.md](../common/hooks.md) with Rust-specific content.
 

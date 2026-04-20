@@ -4,6 +4,7 @@ paths:
   - "**/Package.swift"
 ---
 # Swift Coding Style
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/coding-style.md](../common/coding-style.md) with Swift specific content.
 

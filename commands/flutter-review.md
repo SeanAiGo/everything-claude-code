@@ -1,12 +1,14 @@
 ---
-description: Review Flutter/Dart code for idiomatic patterns, widget best practices, state management, performance, accessibility, and security. Invokes the flutter-reviewer agent.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Review Flutter/Dart code for idiomatic patterns, widget best practices, state management, performance, accessibility, and security. Invokes the flutter-reviewer agent.
 ---
 
 # Flutter Code Review
+> 🇹🇼 命令指示
 
 This command invokes the **flutter-reviewer** agent to review Flutter/Dart code changes.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Gather Context**: Review `git diff --staged` and `git diff`
 2. **Inspect Project**: Check `pubspec.yaml`, `analysis_options.yaml`, state management solution
@@ -15,6 +17,7 @@ This command invokes the **flutter-reviewer** agent to review Flutter/Dart code 
 5. **Report Findings**: Output issues grouped by severity with fix guidance
 
 ## Prerequisites
+> 🇹🇼 命令指示
 
 Before running `/flutter-review`, ensure:
 1. **Build passes** — run `/flutter-build` first; a review on broken code is incomplete
@@ -23,6 +26,7 @@ Before running `/flutter-review`, ensure:
 4. **`flutter analyze` is clean** — fix analyzer warnings before review
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/flutter-review` when:
 - Before submitting a PR with Flutter/Dart changes (after build and tests pass)
@@ -32,6 +36,7 @@ Use `/flutter-review` when:
 - Before a production release
 
 ## Review Areas
+> 🇹🇼 命令指示
 
 | Area | Severity |
 |------|----------|
@@ -48,14 +53,17 @@ Use `/flutter-review` when:
 | Pub dependency hygiene | LOW |
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ````text
 User: /flutter-review
 
 Agent:
 # Flutter Code Review
+> 🇹🇼 命令指示
 
 ## Context
+> 🇹🇼 命令指示
 
 Changed files:
 - lib/features/auth/presentation/login_page.dart
@@ -65,11 +73,13 @@ State management: Riverpod (detected from pubspec.yaml)
 Architecture: feature-first
 
 ## Security Pre-scan
+> 🇹🇼 命令指示
 
 ✓ No hardcoded secrets detected
 ✓ No cleartext HTTP calls
 
 ## Review Findings
+> 🇹🇼 命令指示
 
 [HIGH] BuildContext used after async gap without mounted check
 File: lib/features/auth/presentation/login_page.dart:67
@@ -87,6 +97,7 @@ Issue: `Text('Login')` — user-visible string not using localization system.
 Fix: Use the project's l10n accessor: `Text(context.l10n.loginButton)`.
 
 ## Review Summary
+> 🇹🇼 命令指示
 
 | Severity | Count | Status |
 |----------|-------|--------|
@@ -99,17 +110,20 @@ Verdict: BLOCK — HIGH issues must be fixed before merge.
 ````
 
 ## Approval Criteria
+> 🇹🇼 命令指示
 
 - **Approve**: No CRITICAL or HIGH issues
 - **Block**: Any CRITICAL or HIGH issues must be fixed before merge
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/flutter-build` — Fix build errors first
 - `/flutter-test` — Run tests before reviewing
 - `/code-review` — General code review (language-agnostic)
 
 ## Related
+> 🇹🇼 命令指示
 
 - Agent: `agents/flutter-reviewer.md`
 - Skill: `skills/flutter-dart-code-review/`

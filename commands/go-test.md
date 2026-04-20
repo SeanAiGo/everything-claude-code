@@ -1,12 +1,14 @@
 ---
-description: Enforce TDD workflow for Go. Write table-driven tests first, then implement. Verify 80%+ coverage with go test -cover.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Enforce TDD workflow for Go. Write table-driven tests first, then implement. Verify 80%+ coverage with go test -cover.
 ---
 
 # Go TDD Command
+> 🇹🇼 命令指示
 
 This command enforces test-driven development methodology for Go code using idiomatic Go testing patterns.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Define Types/Interfaces**: Scaffold function signatures first
 2. **Write Table-Driven Tests**: Create comprehensive test cases (RED)
@@ -16,6 +18,7 @@ This command enforces test-driven development methodology for Go code using idio
 6. **Check Coverage**: Ensure 80%+ coverage
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/go-test` when:
 - Implementing new Go functions
@@ -25,6 +28,7 @@ Use `/go-test` when:
 - Learning TDD workflow in Go
 
 ## TDD Cycle
+> 🇹🇼 命令指示
 
 ```
 RED     → Write failing table-driven test
@@ -34,14 +38,17 @@ REPEAT  → Next test case
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ````
 User: /go-test I need a function to validate email addresses
 
 Agent:
 # TDD Session: Email Validator
+> 🇹🇼 命令指示
 
 ## Step 1: Define Interface
+> 🇹🇼 命令指示
 
 ```go
 // validator/email.go
@@ -55,6 +62,7 @@ func ValidateEmail(email string) error {
 ```
 
 ## Step 2: Write Table-Driven Tests (RED)
+> 🇹🇼 命令指示
 
 ```go
 // validator/email_test.go
@@ -101,6 +109,7 @@ func TestValidateEmail(t *testing.T) {
 ```
 
 ## Step 3: Run Tests - Verify FAIL
+> 🇹🇼 命令指示
 
 ```bash
 $ go test ./validator/...
@@ -115,6 +124,7 @@ FAIL
 ✓ Tests fail as expected (panic).
 
 ## Step 4: Implement Minimal Code (GREEN)
+> 🇹🇼 命令指示
 
 ```go
 // validator/email.go
@@ -144,6 +154,7 @@ func ValidateEmail(email string) error {
 ```
 
 ## Step 5: Run Tests - Verify PASS
+> 🇹🇼 命令指示
 
 ```bash
 $ go test ./validator/...
@@ -155,6 +166,7 @@ ok      project/validator    0.003s
 ✓ All tests passing!
 
 ## Step 6: Check Coverage
+> 🇹🇼 命令指示
 
 ```bash
 $ go test -cover ./validator/...
@@ -167,11 +179,14 @@ ok      project/validator    0.003s
 ✓ Coverage: 100%
 
 ## TDD Complete!
+> 🇹🇼 命令指示
 ````
 
 ## Test Patterns
+> 🇹🇼 命令指示
 
 ### Table-Driven Tests
+> 🇹🇼 命令指示
 ```go
 tests := []struct {
     name     string
@@ -192,6 +207,7 @@ for _, tt := range tests {
 ```
 
 ### Parallel Tests
+> 🇹🇼 命令指示
 ```go
 for _, tt := range tests {
     tt := tt // Capture
@@ -203,6 +219,7 @@ for _, tt := range tests {
 ```
 
 ### Test Helpers
+> 🇹🇼 命令指示
 ```go
 func setupTestDB(t *testing.T) *sql.DB {
     t.Helper()
@@ -213,25 +230,32 @@ func setupTestDB(t *testing.T) *sql.DB {
 ```
 
 ## Coverage Commands
+> 🇹🇼 命令指示
 
 ```bash
 # Basic coverage
+> 🇹🇼 命令指示
 go test -cover ./...
 
 # Coverage profile
+> 🇹🇼 命令指示
 go test -coverprofile=coverage.out ./...
 
 # View in browser
+> 🇹🇼 命令指示
 go tool cover -html=coverage.out
 
 # Coverage by function
+> 🇹🇼 命令指示
 go tool cover -func=coverage.out
 
 # With race detection
+> 🇹🇼 命令指示
 go test -race -cover ./...
 ```
 
 ## Coverage Targets
+> 🇹🇼 命令指示
 
 | Code Type | Target |
 |-----------|--------|
@@ -241,6 +265,7 @@ go test -race -cover ./...
 | Generated code | Exclude |
 
 ## TDD Best Practices
+> 🇹🇼 命令指示
 
 **DO:**
 - Write test FIRST, before any implementation
@@ -257,12 +282,14 @@ go test -race -cover ./...
 - Ignore flaky tests
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/go-build` - Fix build errors
 - `/go-review` - Review code after implementation
 - `/verify` - Run full verification loop
 
 ## Related
+> 🇹🇼 命令指示
 
 - Skill: `skills/golang-testing/`
 - Skill: `skills/tdd-workflow/`

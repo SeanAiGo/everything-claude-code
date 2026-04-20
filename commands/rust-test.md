@@ -1,12 +1,14 @@
 ---
-description: Enforce TDD workflow for Rust. Write tests first, then implement. Verify 80%+ coverage with cargo-llvm-cov.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Enforce TDD workflow for Rust. Write tests first, then implement. Verify 80%+ coverage with cargo-llvm-cov.
 ---
 
 # Rust TDD Command
+> 🇹🇼 命令指示
 
 This command enforces test-driven development methodology for Rust code using `#[test]`, rstest, proptest, and mockall.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Define Types/Traits**: Scaffold function signatures with `todo!()`
 2. **Write Tests**: Create comprehensive test module (RED)
@@ -16,6 +18,7 @@ This command enforces test-driven development methodology for Rust code using `#
 6. **Check Coverage**: Ensure 80%+ coverage with cargo-llvm-cov
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/rust-test` when:
 - Implementing new Rust functions, methods, or traits
@@ -25,6 +28,7 @@ Use `/rust-test` when:
 - Learning TDD workflow in Rust
 
 ## TDD Cycle
+> 🇹🇼 命令指示
 
 ```
 RED     -> Write failing test first
@@ -34,14 +38,17 @@ REPEAT  -> Next test case
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ````text
 User: /rust-test I need a function to validate user registration
 
 Agent:
 # TDD Session: Registration Validator
+> 🇹🇼 命令指示
 
 ## Step 1: Define Interface
+> 🇹🇼 命令指示
 
 ```rust
 // src/validator.rs
@@ -62,13 +69,16 @@ pub fn validate_registration(request: &RegistrationRequest) -> ValidationResult 
 ```
 
 ## Step 2: Write Tests (RED)
+> 🇹🇼 命令指示
 
 ```rust
 #[cfg(test)]
+> 🇹🇼 命令指示
 mod tests {
     use super::*;
 
     #[test]
+> 🇹🇼 命令指示
     fn valid_registration_returns_valid() {
         let request = RegistrationRequest {
             name: "Alice".into(),
@@ -79,6 +89,7 @@ mod tests {
     }
 
     #[test]
+> 🇹🇼 命令指示
     fn blank_name_returns_invalid() {
         let request = RegistrationRequest {
             name: "".into(),
@@ -94,6 +105,7 @@ mod tests {
     }
 
     #[test]
+> 🇹🇼 命令指示
     fn invalid_email_returns_invalid() {
         let request = RegistrationRequest {
             name: "Alice".into(),
@@ -107,6 +119,7 @@ mod tests {
     }
 
     #[test]
+> 🇹🇼 命令指示
     fn short_password_returns_invalid() {
         let request = RegistrationRequest {
             name: "Alice".into(),
@@ -122,6 +135,7 @@ mod tests {
 ```
 
 ## Step 3: Run Tests — Verify FAIL
+> 🇹🇼 命令指示
 
 ```bash
 $ cargo test
@@ -135,6 +149,7 @@ test tests::short_password_returns_invalid ... FAILED
 Tests fail as expected (todo! panic).
 
 ## Step 4: Implement Minimal Code (GREEN)
+> 🇹🇼 命令指示
 
 ```rust
 pub fn validate_registration(request: &RegistrationRequest) -> ValidationResult {
@@ -159,6 +174,7 @@ pub fn validate_registration(request: &RegistrationRequest) -> ValidationResult 
 ```
 
 ## Step 5: Run Tests — Verify PASS
+> 🇹🇼 命令指示
 
 ```bash
 $ cargo test
@@ -174,6 +190,7 @@ test result: ok. 4 passed; 0 failed
 All tests passing!
 
 ## Step 6: Check Coverage
+> 🇹🇼 命令指示
 
 ```bash
 $ cargo llvm-cov
@@ -183,23 +200,29 @@ Coverage: 100.0% of lines
 Coverage: 100%
 
 ## TDD Complete!
+> 🇹🇼 命令指示
 ````
 
 ## Test Patterns
+> 🇹🇼 命令指示
 
 ### Unit Tests
+> 🇹🇼 命令指示
 
 ```rust
 #[cfg(test)]
+> 🇹🇼 命令指示
 mod tests {
     use super::*;
 
     #[test]
+> 🇹🇼 命令指示
     fn adds_two_numbers() {
         assert_eq!(add(2, 3), 5);
     }
 
     #[test]
+> 🇹🇼 命令指示
     fn handles_error() -> Result<(), Box<dyn std::error::Error>> {
         let result = parse_config(r#"port = 8080"#)?;
         assert_eq!(result.port, 8080);
@@ -209,23 +232,30 @@ mod tests {
 ```
 
 ### Parameterized Tests with rstest
+> 🇹🇼 命令指示
 
 ```rust
 use rstest::{rstest, fixture};
 
 #[rstest]
+> 🇹🇼 命令指示
 #[case("hello", 5)]
+> 🇹🇼 命令指示
 #[case("", 0)]
+> 🇹🇼 命令指示
 #[case("rust", 4)]
+> 🇹🇼 命令指示
 fn test_string_length(#[case] input: &str, #[case] expected: usize) {
     assert_eq!(input.len(), expected);
 }
 ```
 
 ### Async Tests
+> 🇹🇼 命令指示
 
 ```rust
 #[tokio::test]
+> 🇹🇼 命令指示
 async fn fetches_data_successfully() {
     let client = TestClient::new().await;
     let result = client.get("/data").await;
@@ -234,12 +264,14 @@ async fn fetches_data_successfully() {
 ```
 
 ### Property-Based Tests
+> 🇹🇼 命令指示
 
 ```rust
 use proptest::prelude::*;
 
 proptest! {
     #[test]
+> 🇹🇼 命令指示
     fn encode_decode_roundtrip(input in ".*") {
         let encoded = encode(&input);
         let decoded = decode(&encoded).unwrap();
@@ -249,28 +281,36 @@ proptest! {
 ```
 
 ## Coverage Commands
+> 🇹🇼 命令指示
 
 ```bash
 # Summary report
+> 🇹🇼 命令指示
 cargo llvm-cov
 
 # HTML report
+> 🇹🇼 命令指示
 cargo llvm-cov --html
 
 # Fail if below threshold
+> 🇹🇼 命令指示
 cargo llvm-cov --fail-under-lines 80
 
 # Run specific test
+> 🇹🇼 命令指示
 cargo test test_name
 
 # Run with output
+> 🇹🇼 命令指示
 cargo test -- --nocapture
 
 # Run without stopping on first failure
+> 🇹🇼 命令指示
 cargo test --no-fail-fast
 ```
 
 ## Coverage Targets
+> 🇹🇼 命令指示
 
 | Code Type | Target |
 |-----------|--------|
@@ -280,6 +320,7 @@ cargo test --no-fail-fast
 | Generated / FFI bindings | Exclude |
 
 ## TDD Best Practices
+> 🇹🇼 命令指示
 
 **DO:**
 - Write test FIRST, before any implementation
@@ -297,12 +338,14 @@ cargo test --no-fail-fast
 - Mock everything — prefer integration tests when feasible
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/rust-build` - Fix build errors
 - `/rust-review` - Review code after implementation
 - `/verify` - Run full verification loop
 
 ## Related
+> 🇹🇼 命令指示
 
 - Skill: `skills/rust-testing/`
 - Skill: `skills/rust-patterns/`

@@ -6,6 +6,7 @@ paths:
   - "**/*.jsx"
 ---
 # TypeScript/JavaScript Testing
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/testing.md](../common/testing.md) with TypeScript/JavaScript specific content.
 

@@ -3,6 +3,7 @@ paths:
   - "**/*.java"
 ---
 # Java Testing
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/testing.md](../common/testing.md) with Java-specific content.
 

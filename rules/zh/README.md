@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個規則（Rule）定義檔案。此規則的範疇與目的：規範開發時應遵循的準則與最佳實踐。
+---
 # 规则
+> 🇹🇼 規則說明與指示
 
 ## 结构
 
@@ -45,6 +49,7 @@ rules/
 
 ```bash
 # 安装通用 + 一个或多个语言特定的规则集
+> 🇹🇼 規則說明與指示
 ./install.sh typescript
 ./install.sh python
 ./install.sh golang
@@ -52,6 +57,7 @@ rules/
 ./install.sh php
 
 # 同时安装多种语言
+> 🇹🇼 規則說明與指示
 ./install.sh typescript python
 ```
 
@@ -64,15 +70,19 @@ rules/
 
 ```bash
 # 创建目标目录
+> 🇹🇼 規則說明與指示
 mkdir -p ~/.claude/rules
 
 # 安装通用规则（所有项目必需）
+> 🇹🇼 規則說明與指示
 cp -r rules/common ~/.claude/rules/common
 
 # 安装中文翻译版本（可选）
+> 🇹🇼 規則說明與指示
 cp -r rules/zh ~/.claude/rules/zh
 
 # 根据项目技术栈安装语言特定规则
+> 🇹🇼 規則說明與指示
 cp -r rules/typescript ~/.claude/rules/typescript
 cp -r rules/python ~/.claude/rules/python
 cp -r rules/golang ~/.claude/rules/golang

@@ -1,11 +1,12 @@
 ---
-description: Execute an implementation plan with rigorous validation loops
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Execute an implementation plan with rigorous validation loops
 argument-hint: <path/to/plan.md>
 ---
 
 > Adapted from PRPs-agentic-eng by Wirasm. Part of the PRP workflow series.
 
 # PRP Implement
+> 🇹🇼 命令指示
 
 Execute a plan file step-by-step with continuous validation. Every change is verified immediately — never accumulate broken state.
 
@@ -16,8 +17,10 @@ Execute a plan file step-by-step with continuous validation. Every change is ver
 ---
 
 ## Phase 0 — DETECT
+> 🇹🇼 命令指示
 
 ### Package Manager Detection
+> 🇹🇼 命令指示
 
 | File Exists | Package Manager | Runner |
 |---|---|---|
@@ -30,11 +33,13 @@ Execute a plan file step-by-step with continuous validation. Every change is ver
 | `go.mod` | go | `go` |
 
 ### Validation Scripts
+> 🇹🇼 命令指示
 
 Check `package.json` (or equivalent) for available scripts:
 
 ```bash
 # For Node.js projects
+> 🇹🇼 命令指示
 cat package.json | grep -A 20 '"scripts"'
 ```
 
@@ -43,6 +48,7 @@ Note available commands for: type-check, lint, test, build.
 ---
 
 ## Phase 1 — LOAD
+> 🇹🇼 命令指示
 
 Read the plan file:
 
@@ -69,8 +75,10 @@ Run /prp-plan <feature-description> to create a plan first.
 ---
 
 ## Phase 2 — PREPARE
+> 🇹🇼 命令指示
 
 ### Git State
+> 🇹🇼 命令指示
 
 ```bash
 git branch --show-current
@@ -78,6 +86,7 @@ git status --porcelain
 ```
 
 ### Branch Decision
+> 🇹🇼 命令指示
 
 | Current State | Action |
 |---|---|
@@ -87,6 +96,7 @@ git status --porcelain
 | In a git worktree for this feature | Use the worktree |
 
 ### Sync Remote
+> 🇹🇼 命令指示
 
 ```bash
 git pull --rebase origin $(git branch --show-current) 2>/dev/null || true
@@ -97,10 +107,12 @@ git pull --rebase origin $(git branch --show-current) 2>/dev/null || true
 ---
 
 ## Phase 3 — EXECUTE
+> 🇹🇼 命令指示
 
 Process each task from the plan sequentially.
 
 ### Per-Task Loop
+> 🇹🇼 命令指示
 
 For each task in **Step-by-Step Tasks**:
 
@@ -111,6 +123,7 @@ For each task in **Step-by-Step Tasks**:
 3. **Validate immediately** — After EVERY file change:
    ```bash
    # Run type-check (adjust command per project)
+> 🇹🇼 命令指示
    [type-check command from Phase 0]
    ```
    If type-check fails → fix the error before moving to the next file.
@@ -118,6 +131,7 @@ For each task in **Step-by-Step Tasks**:
 4. **Track progress** — Log: `[done] Task N: [task name] — complete`
 
 ### Handling Deviations
+> 🇹🇼 命令指示
 
 If implementation must deviate from the plan:
 - Note **WHAT** changed
@@ -130,16 +144,20 @@ If implementation must deviate from the plan:
 ---
 
 ## Phase 4 — VALIDATE
+> 🇹🇼 命令指示
 
 Run all validation levels from the plan. Fix issues at each level before proceeding.
 
 ### Level 1: Static Analysis
+> 🇹🇼 命令指示
 
 ```bash
 # Type checking — zero errors required
+> 🇹🇼 命令指示
 [project type-check command]
 
 # Linting — fix automatically where possible
+> 🇹🇼 命令指示
 [project lint command]
 [project lint-fix command]
 ```
@@ -147,6 +165,7 @@ Run all validation levels from the plan. Fix issues at each level before proceed
 If lint errors remain after auto-fix, fix manually.
 
 ### Level 2: Unit Tests
+> 🇹🇼 命令指示
 
 Write tests for every new function (as specified in the plan's Testing Strategy).
 
@@ -159,6 +178,7 @@ Write tests for every new function (as specified in the plan's Testing Strategy)
 - If a test fails → fix the implementation (not the test, unless the test is wrong)
 
 ### Level 3: Build Check
+> 🇹🇼 命令指示
 
 ```bash
 [project build command]
@@ -167,13 +187,16 @@ Write tests for every new function (as specified in the plan's Testing Strategy)
 Build must succeed with zero errors.
 
 ### Level 4: Integration Testing (if applicable)
+> 🇹🇼 命令指示
 
 ```bash
 # Start server, run tests, stop server
+> 🇹🇼 命令指示
 [project dev server command] &
 SERVER_PID=$!
 
 # Wait for server to be ready (adjust port as needed)
+> 🇹🇼 命令指示
 SERVER_READY=0
 for i in $(seq 1 30); do
   if curl -sf http://localhost:PORT/health >/dev/null 2>&1; then
@@ -199,6 +222,7 @@ exit "$TEST_EXIT"
 ```
 
 ### Level 5: Edge Case Testing
+> 🇹🇼 命令指示
 
 Run through edge cases from the plan's Testing Strategy checklist.
 
@@ -207,8 +231,10 @@ Run through edge cases from the plan's Testing Strategy checklist.
 ---
 
 ## Phase 5 — REPORT
+> 🇹🇼 命令指示
 
 ### Create Implementation Report
+> 🇹🇼 命令指示
 
 ```bash
 mkdir -p .claude/PRPs/reports
@@ -218,11 +244,14 @@ Write report to `.claude/PRPs/reports/{plan-name}-report.md`:
 
 ```markdown
 # Implementation Report: [Feature Name]
+> 🇹🇼 命令指示
 
 ## Summary
+> 🇹🇼 命令指示
 [What was implemented]
 
 ## Assessment vs Reality
+> 🇹🇼 命令指示
 
 | Metric | Predicted (Plan) | Actual |
 |---|---|---|
@@ -231,6 +260,7 @@ Write report to `.claude/PRPs/reports/{plan-name}-report.md`:
 | Files Changed | [from plan] | [actual count] |
 
 ## Tasks Completed
+> 🇹🇼 命令指示
 
 | # | Task | Status | Notes |
 |---|---|---|---|
@@ -238,6 +268,7 @@ Write report to `.claude/PRPs/reports/{plan-name}-report.md`:
 | 2 | [task name] | [done] Complete | Deviated — [reason] |
 
 ## Validation Results
+> 🇹🇼 命令指示
 
 | Level | Status | Notes |
 |---|---|---|
@@ -248,6 +279,7 @@ Write report to `.claude/PRPs/reports/{plan-name}-report.md`:
 | Edge Cases | [done] Pass | |
 
 ## Files Changed
+> 🇹🇼 命令指示
 
 | File | Action | Lines |
 |---|---|---|
@@ -255,29 +287,35 @@ Write report to `.claude/PRPs/reports/{plan-name}-report.md`:
 | `path/to/file` | UPDATED | +N / -M |
 
 ## Deviations from Plan
+> 🇹🇼 命令指示
 [List any deviations with WHAT and WHY, or "None"]
 
 ## Issues Encountered
+> 🇹🇼 命令指示
 [List any problems and how they were resolved, or "None"]
 
 ## Tests Written
+> 🇹🇼 命令指示
 
 | Test File | Tests | Coverage |
 |---|---|---|
 | `path/to/test` | N tests | [area covered] |
 
 ## Next Steps
+> 🇹🇼 命令指示
 - [ ] Code review via `/code-review`
 - [ ] Create PR via `/prp-pr`
 ```
 
 ### Update PRD (if applicable)
+> 🇹🇼 命令指示
 
 If this implementation was for a PRD phase:
 1. Update the phase status from `in-progress` to `complete`
 2. Add report path as reference
 
 ### Archive Plan
+> 🇹🇼 命令指示
 
 ```bash
 mkdir -p .claude/PRPs/plans/completed
@@ -289,17 +327,20 @@ mv "$ARGUMENTS" .claude/PRPs/plans/completed/
 ---
 
 ## Phase 6 — OUTPUT
+> 🇹🇼 命令指示
 
 Report to user:
 
 ```
 ## Implementation Complete
+> 🇹🇼 命令指示
 
 - **Plan**: [plan file path] → archived to completed/
 - **Branch**: [current branch name]
 - **Status**: [done] All tasks complete
 
 ### Validation Summary
+> 🇹🇼 命令指示
 
 | Check | Status |
 |---|---|
@@ -310,16 +351,20 @@ Report to user:
 | Integration | [done] or N/A |
 
 ### Files Changed
+> 🇹🇼 命令指示
 - [N] files created, [M] files updated
 
 ### Deviations
+> 🇹🇼 命令指示
 [Summary or "None — implemented exactly as planned"]
 
 ### Artifacts
+> 🇹🇼 命令指示
 - Report: `.claude/PRPs/reports/{name}-report.md`
 - Archived Plan: `.claude/PRPs/plans/completed/{name}.plan.md`
 
 ### PRD Progress (if applicable)
+> 🇹🇼 命令指示
 | Phase | Status |
 |---|---|
 | Phase 1 | [done] Complete |
@@ -332,32 +377,38 @@ Report to user:
 ---
 
 ## Handling Failures
+> 🇹🇼 命令指示
 
 ### Type Check Fails
+> 🇹🇼 命令指示
 1. Read the error message carefully
 2. Fix the type error in the source file
 3. Re-run type-check
 4. Continue only when clean
 
 ### Tests Fail
+> 🇹🇼 命令指示
 1. Identify whether the bug is in the implementation or the test
 2. Fix the root cause (usually the implementation)
 3. Re-run tests
 4. Continue only when green
 
 ### Lint Fails
+> 🇹🇼 命令指示
 1. Run auto-fix first
 2. If errors remain, fix manually
 3. Re-run lint
 4. Continue only when clean
 
 ### Build Fails
+> 🇹🇼 命令指示
 1. Usually a type or import issue — check error message
 2. Fix the offending file
 3. Re-run build
 4. Continue only when successful
 
 ### Integration Test Fails
+> 🇹🇼 命令指示
 1. Check server started correctly
 2. Verify endpoint/route exists
 3. Check request format matches expected
@@ -366,6 +417,7 @@ Report to user:
 ---
 
 ## Success Criteria
+> 🇹🇼 命令指示
 
 - **TASKS_COMPLETE**: All tasks from the plan executed
 - **TYPES_PASS**: Zero type errors
@@ -378,6 +430,7 @@ Report to user:
 ---
 
 ## Next Steps
+> 🇹🇼 命令指示
 
 - Run `/code-review` to review changes before committing
 - Run `/prp-commit` to commit with a descriptive message

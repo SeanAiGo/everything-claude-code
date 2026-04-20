@@ -1,24 +1,29 @@
 ---
-description: Adversarial dual-review convergence loop — two independent model reviewers must both approve before code ships.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Adversarial dual-review convergence loop — two independent model reviewers must both approve before code ships.
 ---
 
 # Santa Loop
+> 🇹🇼 命令指示
 
 Adversarial dual-review convergence loop using the santa-method skill. Two independent reviewers — different models, no shared context — must both return NICE before code ships.
 
 ## Purpose
+> 🇹🇼 命令指示
 
 Run two independent reviewers (Claude Opus + an external model) against the current task output. Both must return NICE before the code is pushed. If either returns NAUGHTY, fix all flagged issues, commit, and re-run fresh reviewers — up to 3 rounds.
 
 ## Usage
+> 🇹🇼 命令指示
 
 ```
 /santa-loop [file-or-glob | description]
 ```
 
 ## Workflow
+> 🇹🇼 命令指示
 
 ### Step 1: Identify What to Review
+> 🇹🇼 命令指示
 
 Determine the scope from `$ARGUMENTS` or fall back to uncommitted changes:
 
@@ -29,6 +34,7 @@ git diff --name-only HEAD
 Read all changed files to build the full review context. If `$ARGUMENTS` specifies a path, file, or description, use that as the scope instead.
 
 ### Step 2: Build the Rubric
+> 🇹🇼 命令指示
 
 Construct a rubric appropriate to the file types under review. Every criterion must have an objective PASS/FAIL condition. Include at minimum:
 
@@ -44,6 +50,7 @@ Construct a rubric appropriate to the file types under review. Every criterion m
 Add domain-specific criteria based on file types (e.g., type safety for TS, memory safety for Rust, migration safety for SQL).
 
 ### Step 3: Dual Independent Review
+> 🇹🇼 命令指示
 
 Launch two reviewers **in parallel** using the Agent tool (both in a single message for concurrent execution). Both must complete before proceeding to the verdict gate.
 
@@ -63,6 +70,7 @@ Each reviewer evaluates every rubric criterion as PASS or FAIL, then returns str
 The verdict gate (Step 4) maps these to NICE/NAUGHTY: both PASS → NICE, either FAIL → NAUGHTY.
 
 #### Reviewer A: Claude Agent (always runs)
+> 🇹🇼 命令指示
 
 Launch an Agent (subagent_type: `code-reviewer`, model: `opus`) with the full rubric + all files under review. The prompt must include:
 - The complete rubric
@@ -71,6 +79,7 @@ Launch an Agent (subagent_type: `code-reviewer`, model: `opus`) with the full ru
 - Return the structured JSON verdict above
 
 #### Reviewer B: External Model (Claude fallback only if no external CLI installed)
+> 🇹🇼 命令指示
 
 First, detect which CLIs are available:
 ```bash
@@ -106,11 +115,13 @@ Launch a second Claude Agent (subagent_type: `code-reviewer`, model: `opus`). Lo
 In all cases, the reviewer must return the same structured JSON verdict as Reviewer A.
 
 ### Step 4: Verdict Gate
+> 🇹🇼 命令指示
 
 - **Both PASS** → **NICE** — proceed to Step 6 (push)
 - **Either FAIL** → **NAUGHTY** — merge all critical issues from both reviewers, deduplicate, proceed to Step 5
 
 ### Step 5: Fix Cycle (NAUGHTY path)
+> 🇹🇼 命令指示
 
 1. Display all critical issues from both reviewers
 2. Fix every flagged issue — change only what was flagged, no drive-by refactors
@@ -135,6 +146,7 @@ Manual review required before proceeding.
 Do NOT push.
 
 ### Step 6: Push (NICE path)
+> 🇹🇼 命令指示
 
 When both reviewers return PASS:
 
@@ -143,10 +155,12 @@ git push -u origin HEAD
 ```
 
 ### Step 7: Final Report
+> 🇹🇼 命令指示
 
 Print the output report (see Output section below).
 
 ## Output
+> 🇹🇼 命令指示
 
 ```
 SANTA VERDICT: [NICE / NAUGHTY (escalated)]
@@ -164,6 +178,7 @@ Result:     [PUSHED / ESCALATED TO USER]
 ```
 
 ## Notes
+> 🇹🇼 命令指示
 
 - Reviewer A (Claude Opus) always runs — guarantees at least one strong reviewer regardless of tooling.
 - Model diversity is the goal for Reviewer B. GPT-5.4 or Gemini 2.5 Pro gives true independence — different training data, different biases, different blind spots. The Claude-only fallback still provides value via context isolation but loses model diversity.

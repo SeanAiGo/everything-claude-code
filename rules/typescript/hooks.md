@@ -6,6 +6,7 @@ paths:
   - "**/*.jsx"
 ---
 # TypeScript/JavaScript Hooks
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/hooks.md](../common/hooks.md) with TypeScript/JavaScript specific content.
 

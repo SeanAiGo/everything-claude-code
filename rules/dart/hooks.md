@@ -5,6 +5,7 @@ paths:
   - "**/analysis_options.yaml"
 ---
 # Dart/Flutter Hooks
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/hooks.md](../common/hooks.md) with Dart and Flutter-specific content.
 
@@ -47,20 +48,26 @@ flutter test
 
 ```bash
 # Format all Dart files
+> 🇹🇼 規則說明與指示
 dart format .
 
 # Analyze and report issues
+> 🇹🇼 規則說明與指示
 dart analyze
 
 # Run all tests with coverage
+> 🇹🇼 規則說明與指示
 flutter test --coverage
 
 # Regenerate code-gen files
+> 🇹🇼 規則說明與指示
 dart run build_runner build --delete-conflicting-outputs
 
 # Check for outdated packages
+> 🇹🇼 規則說明與指示
 flutter pub outdated
 
 # Upgrade packages within constraints
+> 🇹🇼 規則說明與指示
 flutter pub upgrade
 ```

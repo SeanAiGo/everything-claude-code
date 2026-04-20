@@ -1,12 +1,14 @@
 ---
 name: instinct-import
-description: Import instincts from file or URL into project/global scope
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Import instincts from file or URL into project/global scope
 command: true
 ---
 
 # Instinct Import Command
+> 🇹🇼 命令指示
 
 ## Implementation
+> 🇹🇼 命令指示
 
 Run the instinct CLI using the plugin root path:
 
@@ -23,6 +25,7 @@ python3 ~/.claude/skills/continuous-learning-v2/scripts/instinct-cli.py import <
 Import instincts from local file paths or HTTP(S) URLs.
 
 ## Usage
+> 🇹🇼 命令指示
 
 ```
 /instinct-import team-instincts.yaml
@@ -32,6 +35,7 @@ Import instincts from local file paths or HTTP(S) URLs.
 ```
 
 ## What to Do
+> 🇹🇼 命令指示
 
 1. Fetch the instinct file (local path or URL)
 2. Parse and validate the format
@@ -42,6 +46,7 @@ Import instincts from local file paths or HTTP(S) URLs.
    - Global scope: `~/.claude/homunculus/instincts/inherited/`
 
 ## Import Process
+> 🇹🇼 命令指示
 
 ```
  Importing instincts from: team-instincts.yaml
@@ -52,6 +57,7 @@ Found 12 instincts to import.
 Analyzing conflicts...
 
 ## New Instincts (8)
+> 🇹🇼 命令指示
 These will be added:
   ✓ use-zod-validation (confidence: 0.7)
   ✓ prefer-named-exports (confidence: 0.65)
@@ -59,6 +65,7 @@ These will be added:
   ...
 
 ## Duplicate Instincts (3)
+> 🇹🇼 命令指示
 Already have similar instincts:
   WARNING: prefer-functional-style
      Local: 0.8 confidence, 12 observations
@@ -74,6 +81,7 @@ Import 8 new, update 1?
 ```
 
 ## Merge Behavior
+> 🇹🇼 命令指示
 
 When importing an instinct with an existing ID:
 - Higher-confidence import becomes an update candidate
@@ -81,6 +89,7 @@ When importing an instinct with an existing ID:
 - User confirms unless `--force` is used
 
 ## Source Tracking
+> 🇹🇼 命令指示
 
 Imported instincts are marked with:
 ```yaml
@@ -92,6 +101,7 @@ project_name: "my-project"
 ```
 
 ## Flags
+> 🇹🇼 命令指示
 
 - `--dry-run`: Preview without importing
 - `--force`: Skip confirmation prompt
@@ -99,6 +109,7 @@ project_name: "my-project"
 - `--scope <project|global>`: Select target scope (default: `project`)
 
 ## Output
+> 🇹🇼 命令指示
 
 After import:
 ```

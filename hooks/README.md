@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個鉤子（Hook）相關的說明檔案。
+---
 # Hooks
+> 🇹🇼 說明與指示
 
 Hooks are event-driven automations that fire before or after Claude Code tool executions. They enforce code quality, catch mistakes early, and automate repetitive checks.
 
@@ -94,9 +98,11 @@ Use environment variables to control hook behavior without editing `hooks.json`:
 
 ```bash
 # minimal | standard | strict (default: standard)
+> 🇹🇼 說明與指示
 export ECC_HOOK_PROFILE=standard
 
 # Disable specific hook IDs (comma-separated)
+> 🇹🇼 說明與指示
 export ECC_DISABLED_HOOKS="pre:bash:tmux-reminder,post:edit:typecheck"
 ```
 

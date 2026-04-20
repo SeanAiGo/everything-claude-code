@@ -1,6 +1,10 @@
+---
+description: 📝 【文件定位】這是一個規則（Rule）定義檔案。此規則的範疇與目的：規範開發時應遵循的準則與最佳實踐。
+---
 > This file extends [common/testing.md](../common/testing.md) with web-specific testing content.
 
 # Web Testing Rules
+> 🇹🇼 規則說明與指示
 
 ## Priority Order
 

@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個規則（Rule）定義檔案。此規則的範疇與目的：規範開發時應遵循的準則與最佳實踐。
+---
 # Agent Orchestration
+> 🇹🇼 規則說明與指示
 
 ## Available Agents
 
@@ -31,12 +35,14 @@ ALWAYS use parallel Task execution for independent operations:
 
 ```markdown
 # GOOD: Parallel execution
+> 🇹🇼 規則說明與指示
 Launch 3 agents in parallel:
 1. Agent 1: Security analysis of auth module
 2. Agent 2: Performance review of cache system
 3. Agent 3: Type checking of utilities
 
 # BAD: Sequential when unnecessary
+> 🇹🇼 規則說明與指示
 First agent 1, then agent 2, then agent 3
 ```
 

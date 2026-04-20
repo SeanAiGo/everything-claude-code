@@ -1,9 +1,10 @@
 ---
-description: "Quick commit with natural language file targeting — describe what to commit in plain English"
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Quick commit with natural language file targeting — describe what to commit in plain English
 argument-hint: "[target description] (blank = all changes)"
 ---
 
 # Smart Commit
+> 🇹🇼 命令指示
 
 > Adapted from PRPs-agentic-eng by Wirasm. Part of the PRP workflow series.
 
@@ -12,6 +13,7 @@ argument-hint: "[target description] (blank = all changes)"
 ---
 
 ## Phase 1 — ASSESS
+> 🇹🇼 命令指示
 
 ```bash
 git status --short
@@ -24,6 +26,7 @@ Show the user a summary of what's changed (added, modified, deleted, untracked).
 ---
 
 ## Phase 2 — INTERPRET & STAGE
+> 🇹🇼 命令指示
 
 Interpret `$ARGUMENTS` to determine what to stage:
 
@@ -53,6 +56,7 @@ If nothing staged, stop: "No files matched your description."
 ---
 
 ## Phase 3 — COMMIT
+> 🇹🇼 命令指示
 
 Craft a single-line commit message in imperative mood:
 
@@ -84,6 +88,7 @@ git commit -m "{type}: {description}"
 ---
 
 ## Phase 4 — OUTPUT
+> 🇹🇼 命令指示
 
 Report to user:
 
@@ -101,6 +106,7 @@ Next steps:
 ---
 
 ## Examples
+> 🇹🇼 命令指示
 
 | You say | What happens |
 |---|---|

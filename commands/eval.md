@@ -1,21 +1,25 @@
 ---
-description: Legacy slash-entry shim for the eval-harness skill. Prefer the skill directly.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Legacy slash-entry shim for the eval-harness skill. Prefer the skill directly.
 ---
 
 # Eval Command (Legacy Shim)
+> 🇹🇼 命令指示
 
 Use this only if you still invoke `/eval`. The maintained workflow lives in `skills/eval-harness/SKILL.md`.
 
 ## Canonical Surface
+> 🇹🇼 命令指示
 
 - Prefer the `eval-harness` skill directly.
 - Keep this file only as a compatibility entry point.
 
 ## Arguments
+> 🇹🇼 命令指示
 
 `$ARGUMENTS`
 
 ## Delegation
+> 🇹🇼 命令指示
 
 Apply the `eval-harness` skill.
 - Support the same user intents as before: define, check, report, list, and cleanup.

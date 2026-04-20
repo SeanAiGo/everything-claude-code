@@ -1,12 +1,14 @@
 ---
-description: Save current session state to a dated file in ~/.claude/session-data/ so work can be resumed in a future session with full context.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Save current session state to a dated file in ~/.claude/session-data/ so work can be resumed in a future session with full context.
 ---
 
 # Save Session Command
+> 🇹🇼 命令指示
 
 Capture everything that happened in this session — what was built, what worked, what failed, what's left — and write it to a dated file so the next session can pick up exactly where this one left off.
 
 ## When to Use
+> 🇹🇼 命令指示
 
 - End of a work session before closing Claude Code
 - Before hitting context limits (run this first, then start a fresh session)
@@ -14,8 +16,10 @@ Capture everything that happened in this session — what was built, what worked
 - Any time you need to hand off context to a future session
 
 ## Process
+> 🇹🇼 命令指示
 
 ### Step 1: Gather context
+> 🇹🇼 命令指示
 
 Before writing the file, collect:
 
@@ -25,6 +29,7 @@ Before writing the file, collect:
 - Check current test/build status if relevant
 
 ### Step 2: Create the sessions folder if it doesn't exist
+> 🇹🇼 命令指示
 
 Create the canonical sessions folder in the user's Claude home directory:
 
@@ -33,6 +38,7 @@ mkdir -p ~/.claude/session-data
 ```
 
 ### Step 3: Write the session file
+> 🇹🇼 命令指示
 
 Create `~/.claude/session-data/YYYY-MM-DD-<short-id>-session.tmp`, using today's actual date and a short-id that satisfies the rules enforced by `SESSION_FILENAME_REGEX` in `session-manager.js`:
 
@@ -48,10 +54,12 @@ Full valid filename example: `2024-01-15-abc123de-session.tmp`
 The legacy filename `YYYY-MM-DD-session.tmp` is still valid, but new session files should prefer the short-id form to avoid same-day collisions.
 
 ### Step 4: Populate the file with all sections below
+> 🇹🇼 命令指示
 
 Write every section honestly. Do not skip sections — write "Nothing yet" or "N/A" if a section genuinely has no content. An incomplete file is worse than an honest empty section.
 
 ### Step 5: Show the file to the user
+> 🇹🇼 命令指示
 
 After writing, display the full contents and ask:
 
@@ -66,9 +74,11 @@ Wait for confirmation. Make edits if requested.
 ---
 
 ## Session File Format
+> 🇹🇼 命令指示
 
 ```markdown
 # Session: YYYY-MM-DD
+> 🇹🇼 命令指示
 
 **Started:** [approximate time if known]
 **Last Updated:** [current time]
@@ -78,6 +88,7 @@ Wait for confirmation. Make edits if requested.
 ---
 
 ## What We Are Building
+> 🇹🇼 命令指示
 
 [1-3 paragraphs describing the feature, bug fix, or task. Include enough
 context that someone with zero memory of this session can understand the goal.
@@ -86,6 +97,7 @@ Include: what it does, why it's needed, how it fits into the larger system.]
 ---
 
 ## What WORKED (with evidence)
+> 🇹🇼 命令指示
 
 [List only things that are confirmed working. For each item include WHY you
 know it works — test passed, ran in browser, Postman returned 200, etc.
@@ -99,6 +111,7 @@ If nothing is confirmed working yet: "Nothing confirmed working yet — all appr
 ---
 
 ## What Did NOT Work (and why)
+> 🇹🇼 命令指示
 
 [This is the most important section. List every approach tried that failed.
 For each failure write the EXACT reason so the next session doesn't retry it.
@@ -112,6 +125,7 @@ If nothing failed: "No failed approaches yet."
 ---
 
 ## What Has NOT Been Tried Yet
+> 🇹🇼 命令指示
 
 [Approaches that seem promising but haven't been attempted. Ideas from the
 conversation. Alternative solutions worth exploring. Be specific enough that
@@ -125,6 +139,7 @@ If nothing is queued: "No specific untried approaches identified."
 ---
 
 ## Current State of Files
+> 🇹🇼 命令指示
 
 [Every file touched this session. Be precise about what state each file is in.]
 
@@ -140,6 +155,7 @@ If no files were touched: "No files modified this session."
 ---
 
 ## Decisions Made
+> 🇹🇼 命令指示
 
 [Architecture choices, tradeoffs accepted, approaches chosen and why.
 These prevent the next session from relitigating settled decisions.]
@@ -151,6 +167,7 @@ If no significant decisions: "No major decisions made this session."
 ---
 
 ## Blockers & Open Questions
+> 🇹🇼 命令指示
 
 [Anything unresolved that the next session needs to address or investigate.
 Questions that came up but weren't answered. External dependencies waiting on.]
@@ -162,6 +179,7 @@ If none: "No active blockers."
 ---
 
 ## Exact Next Step
+> 🇹🇼 命令指示
 
 [If known: The single most important thing to do when resuming. Be precise
 enough that resuming requires zero thinking about where to start.]
@@ -172,6 +190,7 @@ and 'Blockers' sections to decide on direction before starting."]
 ---
 
 ## Environment & Setup Notes
+> 🇹🇼 命令指示
 
 [Only fill this if relevant — commands needed to run the project, env vars
 required, services that need to be running, etc. Skip if standard setup.]
@@ -182,9 +201,11 @@ required, services that need to be running, etc. Skip if standard setup.]
 ---
 
 ## Example Output
+> 🇹🇼 命令指示
 
 ```markdown
 # Session: 2024-01-15
+> 🇹🇼 命令指示
 
 **Started:** ~2pm
 **Last Updated:** 5:30pm
@@ -194,6 +215,7 @@ required, services that need to be running, etc. Skip if standard setup.]
 ---
 
 ## What We Are Building
+> 🇹🇼 命令指示
 
 User authentication system for the Next.js app. Users register with email/password,
 receive a JWT stored in an httpOnly cookie (not localStorage), and protected routes
@@ -203,6 +225,7 @@ refreshes without exposing the token to JavaScript.
 ---
 
 ## What WORKED (with evidence)
+> 🇹🇼 命令指示
 
 - **`/api/auth/register` endpoint** — confirmed by: Postman POST returns 200 with user
   object, row visible in Supabase dashboard, bcrypt hash stored correctly
@@ -213,6 +236,7 @@ refreshes without exposing the token to JavaScript.
 ---
 
 ## What Did NOT Work (and why)
+> 🇹🇼 命令指示
 
 - **Next-Auth library** — failed because: conflicts with our custom Prisma adapter,
   threw "Cannot use adapter with credentials provider in this configuration" on every
@@ -224,6 +248,7 @@ refreshes without exposing the token to JavaScript.
 ---
 
 ## What Has NOT Been Tried Yet
+> 🇹🇼 命令指示
 
 - Store JWT as httpOnly cookie in the login route response (most likely solution)
 - Use `cookies()` from `next/headers` to read token in server components
@@ -232,6 +257,7 @@ refreshes without exposing the token to JavaScript.
 ---
 
 ## Current State of Files
+> 🇹🇼 命令指示
 
 | File                             | Status         | Notes                                           |
 | -------------------------------- | -------------- | ----------------------------------------------- |
@@ -244,6 +270,7 @@ refreshes without exposing the token to JavaScript.
 ---
 
 ## Decisions Made
+> 🇹🇼 命令指示
 
 - **httpOnly cookie over localStorage** — reason: prevents XSS token theft, works with SSR
 - **Custom auth over Next-Auth** — reason: Next-Auth conflicts with our Prisma setup, not worth the fight
@@ -251,12 +278,14 @@ refreshes without exposing the token to JavaScript.
 ---
 
 ## Blockers & Open Questions
+> 🇹🇼 命令指示
 
 - Does `cookies().set()` work inside a Route Handler or only in Server Actions? Need to verify.
 
 ---
 
 ## Exact Next Step
+> 🇹🇼 命令指示
 
 In `app/api/auth/login/route.ts`, after generating the JWT, set it as an httpOnly
 cookie using `cookies().set('token', jwt, { httpOnly: true, secure: true, sameSite: 'strict' })`.
@@ -266,6 +295,7 @@ Then test with Postman — the response should include a `Set-Cookie` header.
 ---
 
 ## Notes
+> 🇹🇼 命令指示
 
 - Each session gets its own file — never append to a previous session's file
 - The "What Did NOT Work" section is the most critical — future sessions will blindly retry failed approaches without it

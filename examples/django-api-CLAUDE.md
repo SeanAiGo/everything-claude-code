@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # Django REST API — Project CLAUDE.md
+> 🇹🇼 說明與指示
 
 > Real-world example for a Django REST Framework API with PostgreSQL and Celery.
 > Copy this to your project root and customize for your service.
@@ -29,11 +33,13 @@
 
 ```python
 # BAD: N+1 query
+> 🇹🇼 說明與指示
 orders = Order.objects.all()
 for order in orders:
     print(order.customer.name)  # hits DB for each order
 
 # GOOD: Single query with join
+> 🇹🇼 說明與指示
 orders = Order.objects.select_related("customer").all()
 ```
 
@@ -77,6 +83,7 @@ class OrderDetailSerializer(serializers.ModelSerializer):
 
 ```python
 # core/exceptions.py
+> 🇹🇼 說明與指示
 from rest_framework.exceptions import APIException
 
 class InsufficientStockError(APIException):
@@ -138,6 +145,7 @@ core/
 
 ```python
 # apps/orders/services.py
+> 🇹🇼 說明與指示
 from django.db import transaction
 
 def create_order(*, customer, product_id: uuid.UUID, quantity: int) -> Order:
@@ -166,6 +174,7 @@ def create_order(*, customer, product_id: uuid.UUID, quantity: int) -> Order:
 
 ```python
 # apps/orders/views.py
+> 🇹🇼 說明與指示
 class OrderViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     pagination_class = StandardPagination
@@ -196,6 +205,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 
 ```python
 # apps/orders/tests/factories.py
+> 🇹🇼 說明與指示
 import factory
 from apps.accounts.tests.factories import UserFactory
 from apps.products.tests.factories import ProductFactory
@@ -210,6 +220,7 @@ class OrderFactory(factory.django.DjangoModelFactory):
     total = factory.LazyAttribute(lambda o: o.product.price * o.quantity)
 
 # apps/orders/tests/test_views.py
+> 🇹🇼 說明與指示
 import pytest
 from rest_framework.test import APIClient
 
@@ -247,21 +258,26 @@ class TestCreateOrder:
 
 ```bash
 # Django
+> 🇹🇼 說明與指示
 SECRET_KEY=
 DEBUG=False
 ALLOWED_HOSTS=api.example.com
 
 # Database
+> 🇹🇼 說明與指示
 DATABASE_URL=postgres://user:pass@localhost:5432/myapp
 
 # Redis (Celery broker + cache)
+> 🇹🇼 說明與指示
 REDIS_URL=redis://localhost:6379/0
 
 # JWT
+> 🇹🇼 說明與指示
 JWT_ACCESS_TOKEN_LIFETIME=15       # minutes
 JWT_REFRESH_TOKEN_LIFETIME=10080   # minutes (7 days)
 
 # Email
+> 🇹🇼 說明與指示
 EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
 EMAIL_HOST=smtp.example.com
 ```
@@ -270,15 +286,19 @@ EMAIL_HOST=smtp.example.com
 
 ```bash
 # Run all tests
+> 🇹🇼 說明與指示
 pytest --cov=apps --cov-report=term-missing
 
 # Run specific app tests
+> 🇹🇼 說明與指示
 pytest apps/orders/tests/ -v
 
 # Run with parallel execution
+> 🇹🇼 說明與指示
 pytest -n auto
 
 # Only failing tests from last run
+> 🇹🇼 說明與指示
 pytest --lf
 ```
 
@@ -286,17 +306,21 @@ pytest --lf
 
 ```bash
 # Planning
+> 🇹🇼 說明與指示
 /plan "Add order refund system with Stripe integration"
 
 # Development with TDD
+> 🇹🇼 說明與指示
 /tdd                    # pytest-based TDD workflow
 
 # Review
+> 🇹🇼 說明與指示
 /python-review          # Python-specific code review
 /security-scan          # Django security audit
 /code-review            # General quality check
 
 # Verification
+> 🇹🇼 說明與指示
 /verify                 # Build, lint, test, security scan
 ```
 

@@ -1,12 +1,14 @@
 ---
-description: Answer a quick side question without interrupting or losing context from the current task. Resume work automatically after answering.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Answer a quick side question without interrupting or losing context from the current task. Resume work automatically after answering.
 ---
 
 # Aside Command
+> 🇹🇼 命令指示
 
 Ask a question mid-task and get an immediate, focused answer — then continue right where you left off. The current task, files, and context are never modified.
 
 ## When to Use
+> 🇹🇼 命令指示
 
 - You're curious about something while Claude is working and don't want to lose momentum
 - You need a quick explanation of code Claude is currently editing
@@ -15,6 +17,7 @@ Ask a question mid-task and get an immediate, focused answer — then continue r
 - You want to ask something unrelated to the current task without starting a new session
 
 ## Usage
+> 🇹🇼 命令指示
 
 ```
 /aside <your question>
@@ -26,8 +29,10 @@ Ask a question mid-task and get an immediate, focused answer — then continue r
 ```
 
 ## Process
+> 🇹🇼 命令指示
 
 ### Step 1: Freeze the current task state
+> 🇹🇼 命令指示
 
 Before answering anything, mentally note:
 - What is the active task? (what file, feature, or problem was being worked on)
@@ -37,6 +42,7 @@ Before answering anything, mentally note:
 Do NOT touch, edit, create, or delete any files during the aside.
 
 ### Step 2: Answer the question directly
+> 🇹🇼 命令指示
 
 Answer the question in the most concise form that is still complete and useful.
 
@@ -56,12 +62,14 @@ ASIDE: [restate the question briefly]
 ```
 
 ### Step 3: Resume the main task
+> 🇹🇼 命令指示
 
 After delivering the answer, immediately continue the active task from the exact point it was paused. Do not ask for permission to resume unless the aside answer revealed a blocker or a reason to reconsider the current approach (see Edge Cases).
 
 ---
 
 ## Edge Cases
+> 🇹🇼 命令指示
 
 **No question provided (`/aside` with nothing after it):**
 Respond:
@@ -128,6 +136,7 @@ Ask one clarifying question — the shortest question that gets the information 
 ---
 
 ## Example Output
+> 🇹🇼 命令指示
 
 ```
 User: /aside what does fetchWithRetry() actually do?
@@ -156,6 +165,7 @@ WARNING: Note: This could affect the feature we're building. Want to address thi
 ---
 
 ## Notes
+> 🇹🇼 命令指示
 
 - Never modify files during an aside — read-only access only
 - The aside is a conversation pause, not a new task — the original task must always resume

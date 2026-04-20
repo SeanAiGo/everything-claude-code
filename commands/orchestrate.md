@@ -1,22 +1,26 @@
 ---
-description: Legacy slash-entry shim for dmux-workflows and autonomous-agent-harness. Prefer the skills directly.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Legacy slash-entry shim for dmux-workflows and autonomous-agent-harness. Prefer the skills directly.
 ---
 
 # Orchestrate Command (Legacy Shim)
+> 🇹🇼 命令指示
 
 Use this only if you still invoke `/orchestrate`. The maintained orchestration guidance lives in `skills/dmux-workflows/SKILL.md` and `skills/autonomous-agent-harness/SKILL.md`.
 
 ## Canonical Surface
+> 🇹🇼 命令指示
 
 - Prefer `dmux-workflows` for parallel panes, worktrees, and multi-agent splits.
 - Prefer `autonomous-agent-harness` for longer-running loops, governance, scheduling, and control-plane style execution.
 - Keep this file only as a compatibility entry point.
 
 ## Arguments
+> 🇹🇼 命令指示
 
 `$ARGUMENTS`
 
 ## Delegation
+> 🇹🇼 命令指示
 
 Apply the orchestration skills instead of maintaining a second workflow spec here.
 - Start with `dmux-workflows` for split/parallel execution.
@@ -25,34 +29,41 @@ Apply the orchestration skills instead of maintaining a second workflow spec her
 Security Reviewer: [summary]
 
 ### FILES CHANGED
+> 🇹🇼 命令指示
 
 [List all files modified]
 
 ### TEST RESULTS
+> 🇹🇼 命令指示
 
 [Test pass/fail summary]
 
 ### SECURITY STATUS
+> 🇹🇼 命令指示
 
 [Security findings]
 
 ### RECOMMENDATION
+> 🇹🇼 命令指示
 
 [SHIP / NEEDS WORK / BLOCKED]
 ```
 
 ## Parallel Execution
+> 🇹🇼 命令指示
 
 For independent checks, run agents in parallel:
 
 ```markdown
 ### Parallel Phase
+> 🇹🇼 命令指示
 Run simultaneously:
 - code-reviewer (quality)
 - security-reviewer (security)
 - architect (design)
 
 ### Merge Results
+> 🇹🇼 命令指示
 Combine outputs into single report
 ```
 
@@ -83,6 +94,7 @@ node scripts/orchestration-status.js .claude/plan/workflow-visual-proof.json
 The snapshot includes session activity, tmux pane metadata, worker states, objectives, seeded overlays, and recent handoff summaries in JSON form.
 
 ## Operator Command-Center Handoff
+> 🇹🇼 命令指示
 
 When the workflow spans multiple sessions, worktrees, or tmux panes, append a control-plane block to the final handoff:
 
@@ -112,6 +124,7 @@ Telemetry:
 This keeps planner, implementer, reviewer, and loop workers legible from the operator surface.
 
 ## Workflow Arguments
+> 🇹🇼 命令指示
 
 $ARGUMENTS:
 - `feature <description>` - Full feature workflow
@@ -121,12 +134,14 @@ $ARGUMENTS:
 - `custom <agents> <description>` - Custom agent sequence
 
 ## Custom Workflow Example
+> 🇹🇼 命令指示
 
 ```
 /orchestrate custom "architect,tdd-guide,code-reviewer" "Redesign caching layer"
 ```
 
 ## Tips
+> 🇹🇼 命令指示
 
 1. **Start with planner** for complex features
 2. **Always include code-reviewer** before merge

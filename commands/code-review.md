@@ -1,9 +1,10 @@
 ---
-description: Code review — local uncommitted changes or GitHub PR (pass PR number/URL for PR mode)
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Code review — local uncommitted changes or GitHub PR (pass PR number/URL for PR mode)
 argument-hint: [pr-number | pr-url | blank for local review]
 ---
 
 # Code Review
+> 🇹🇼 命令指示
 
 > PR review mode adapted from PRPs-agentic-eng by Wirasm. Part of the PRP workflow series.
 
@@ -12,6 +13,7 @@ argument-hint: [pr-number | pr-url | blank for local review]
 ---
 
 ## Mode Selection
+> 🇹🇼 命令指示
 
 If `$ARGUMENTS` contains a PR number, PR URL, or `--pr`:
 → Jump to **PR Review Mode** below.
@@ -22,10 +24,12 @@ Otherwise:
 ---
 
 ## Local Review Mode
+> 🇹🇼 命令指示
 
 Comprehensive security and quality review of uncommitted changes.
 
 ### Phase 1 — GATHER
+> 🇹🇼 命令指示
 
 ```bash
 git diff --name-only HEAD
@@ -34,6 +38,7 @@ git diff --name-only HEAD
 If no changed files, stop: "Nothing to review."
 
 ### Phase 2 — REVIEW
+> 🇹🇼 命令指示
 
 Read each changed file in full. Check for:
 
@@ -61,6 +66,7 @@ Read each changed file in full. Check for:
 - Accessibility issues (a11y)
 
 ### Phase 3 — REPORT
+> 🇹🇼 命令指示
 
 Generate report with:
 - Severity: CRITICAL, HIGH, MEDIUM, LOW
@@ -74,10 +80,12 @@ Never approve code with security vulnerabilities.
 ---
 
 ## PR Review Mode
+> 🇹🇼 命令指示
 
 Comprehensive GitHub PR review — fetches diff, reads full files, runs validation, posts review.
 
 ### Phase 1 — FETCH
+> 🇹🇼 命令指示
 
 Parse input to determine PR:
 
@@ -95,6 +103,7 @@ gh pr diff <NUMBER>
 If PR not found, stop with error. Store PR metadata for later phases.
 
 ### Phase 2 — CONTEXT
+> 🇹🇼 命令指示
 
 Build review context:
 
@@ -104,6 +113,7 @@ Build review context:
 4. **Changed files** — List all modified files and categorize by type (source, test, config, docs)
 
 ### Phase 3 — REVIEW
+> 🇹🇼 命令指示
 
 Read each changed file **in full** (not just the diff hunks — you need surrounding context).
 
@@ -136,6 +146,7 @@ Assign severity to each finding:
 | **LOW** | Style nit or minor suggestion | Optional |
 
 ### Phase 4 — VALIDATE
+> 🇹🇼 命令指示
 
 Run available validation commands:
 
@@ -171,6 +182,7 @@ pytest  # Tests
 Run only the commands that apply to the detected project type. Record pass/fail for each.
 
 ### Phase 5 — DECIDE
+> 🇹🇼 命令指示
 
 Form recommendation based on findings:
 
@@ -187,11 +199,13 @@ Special cases:
 - Explicit `--approve` or `--request-changes` flag → Override decision (but still report all findings)
 
 ### Phase 6 — REPORT
+> 🇹🇼 命令指示
 
 Create review artifact at `.claude/PRPs/reviews/pr-<NUMBER>-review.md`:
 
 ```markdown
 # PR Review: #<NUMBER> — <TITLE>
+> 🇹🇼 命令指示
 
 **Reviewed**: <date>
 **Author**: <author>
@@ -199,23 +213,30 @@ Create review artifact at `.claude/PRPs/reviews/pr-<NUMBER>-review.md`:
 **Decision**: APPROVE | REQUEST CHANGES | BLOCK
 
 ## Summary
+> 🇹🇼 命令指示
 <1-2 sentence overall assessment>
 
 ## Findings
+> 🇹🇼 命令指示
 
 ### CRITICAL
+> 🇹🇼 命令指示
 <findings or "None">
 
 ### HIGH
+> 🇹🇼 命令指示
 <findings or "None">
 
 ### MEDIUM
+> 🇹🇼 命令指示
 <findings or "None">
 
 ### LOW
+> 🇹🇼 命令指示
 <findings or "None">
 
 ## Validation Results
+> 🇹🇼 命令指示
 
 | Check | Result |
 |---|---|
@@ -225,21 +246,26 @@ Create review artifact at `.claude/PRPs/reviews/pr-<NUMBER>-review.md`:
 | Build | Pass / Fail / Skipped |
 
 ## Files Reviewed
+> 🇹🇼 命令指示
 <list of files with change type: Added/Modified/Deleted>
 ```
 
 ### Phase 7 — PUBLISH
+> 🇹🇼 命令指示
 
 Post the review to GitHub:
 
 ```bash
 # If APPROVE
+> 🇹🇼 命令指示
 gh pr review <NUMBER> --approve --body "<summary of review>"
 
 # If REQUEST CHANGES
+> 🇹🇼 命令指示
 gh pr review <NUMBER> --request-changes --body "<summary with required fixes>"
 
 # If COMMENT only (draft PR or informational)
+> 🇹🇼 命令指示
 gh pr review <NUMBER> --comment --body "<summary>"
 ```
 
@@ -262,6 +288,7 @@ gh api "repos/{owner}/{repo}/pulls/<NUMBER>/reviews" \
 ```
 
 ### Phase 8 — OUTPUT
+> 🇹🇼 命令指示
 
 Report to user:
 
@@ -283,6 +310,7 @@ Next steps:
 ---
 
 ## Edge Cases
+> 🇹🇼 命令指示
 
 - **No `gh` CLI**: Fall back to local-only review (read the diff, skip GitHub publish). Warn user.
 - **Diverged branches**: Suggest `git fetch origin && git rebase origin/<base>` before review.

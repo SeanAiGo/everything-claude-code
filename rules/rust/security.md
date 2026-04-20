@@ -3,6 +3,7 @@ paths:
   - "**/*.rs"
 ---
 # Rust Security
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/security.md](../common/security.md) with Rust-specific content.
 
@@ -103,12 +104,15 @@ unsafe { &*ptr }
 
 ```bash
 # Security audit
+> 🇹🇼 規則說明與指示
 cargo audit
 
 # Deny advisories, duplicate versions, and restricted licenses
+> 🇹🇼 規則說明與指示
 cargo deny check
 
 # Inspect dependency tree
+> 🇹🇼 規則說明與指示
 cargo tree
 cargo tree -d  # Show duplicates only
 ```
