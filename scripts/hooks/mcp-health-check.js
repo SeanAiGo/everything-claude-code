@@ -415,6 +415,56 @@ async function probeServer(serverName, resolvedConfig) {
   };
 }
 
+function parseCommandString(cmd) {
+  const args = [];
+  let current = '';
+  let inQuotes = false;
+  let quoteChar = '';
+  let escaped = false;
+
+  for (let i = 0; i < cmd.length; i++) {
+    const char = cmd[i];
+
+    if (escaped) {
+      current += char;
+      escaped = false;
+      continue;
+    }
+
+    if (char === '\\') {
+      escaped = true;
+      continue;
+    }
+
+    if (inQuotes) {
+      if (char === quoteChar) {
+        inQuotes = false;
+        quoteChar = '';
+      } else {
+        current += char;
+      }
+    } else {
+      if (char === '"' || char === "'") {
+        inQuotes = true;
+        quoteChar = char;
+      } else if (/\s/.test(char)) {
+        if (current.length > 0) {
+          args.push(current);
+          current = '';
+        }
+      } else {
+        current += char;
+      }
+    }
+  }
+
+  if (current.length > 0) {
+    args.push(current);
+  }
+
+  return args;
+}
+
 function reconnectCommand(serverName) {
   const key = `ECC_MCP_RECONNECT_${String(serverName).toUpperCase().replace(/[^A-Z0-9]/g, '_')}`;
   const command = process.env[key] || process.env.ECC_MCP_RECONNECT_COMMAND || '';
@@ -422,19 +472,28 @@ function reconnectCommand(serverName) {
     return null;
   }
 
-  return command.includes('{server}')
-    ? command.replace(/\{server\}/g, serverName)
-    : command;
+  return command;
 }
 
 function attemptReconnect(serverName) {
-  const command = reconnectCommand(serverName);
-  if (!command) {
+  const commandLine = reconnectCommand(serverName);
+  if (!commandLine) {
     return { attempted: false, success: false, reason: 'no reconnect command configured' };
   }
 
-  const result = spawnSync(command, {
-    shell: true,
+  const parts = parseCommandString(commandLine).map(part =>
+    part.includes('{server}') ? part.replace(/\{server\}/g, serverName) : part
+  );
+
+  if (parts.length === 0) {
+    return { attempted: false, success: false, reason: 'reconnect command is empty' };
+  }
+
+  const command = parts[0];
+  const args = parts.slice(1);
+
+  const result = spawnSync(command, args, {
+    shell: false,
     env: process.env,
     cwd: process.cwd(),
     encoding: 'utf8',
