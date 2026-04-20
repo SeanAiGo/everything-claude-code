@@ -387,26 +387,33 @@ function listWorktrees(repoRoot) {
   return worktrees;
 }
 
-function cleanupExisting(plan) {
-  runCommand('git', ['worktree', 'prune', '--expire', 'now'], { cwd: plan.repoRoot });
+function cleanupExisting(plan, runtime = {}) {
+  const runCommandImpl = runtime.runCommand || runCommand;
+  const spawnSyncImpl = runtime.spawnSync || spawnSync;
+  const listWorktreesImpl = runtime.listWorktrees || listWorktrees;
+  const branchExistsImpl = runtime.branchExists || branchExists;
 
-  const hasSession = spawnSync('tmux', ['has-session', '-t', plan.sessionName], {
+  runCommandImpl('git', ['worktree', 'prune', '--expire', 'now'], { cwd: plan.repoRoot });
+
+  const hasSession = spawnSyncImpl('tmux', ['has-session', '-t', plan.sessionName], {
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'pipe']
   });
 
   if (hasSession.status === 0) {
-    runCommand('tmux', ['kill-session', '-t', plan.sessionName], { cwd: plan.repoRoot });
+    runCommandImpl('tmux', ['kill-session', '-t', plan.sessionName], { cwd: plan.repoRoot });
   }
+
+  const worktrees = listWorktreesImpl(plan.repoRoot);
 
   for (const workerPlan of plan.workerPlans) {
     const expectedWorktreePath = canonicalizePath(workerPlan.worktreePath);
-    const existingWorktree = listWorktrees(plan.repoRoot).find(
+    const existingWorktree = worktrees.find(
       worktree => worktree.canonicalPath === expectedWorktreePath
     );
 
     if (existingWorktree) {
-      runCommand('git', ['worktree', 'remove', '--force', existingWorktree.listedPath], {
+      runCommandImpl('git', ['worktree', 'remove', '--force', existingWorktree.listedPath], {
         cwd: plan.repoRoot
       });
     }
@@ -415,12 +422,12 @@ function cleanupExisting(plan) {
       fs.rmSync(workerPlan.worktreePath, { force: true, recursive: true });
     }
 
-    runCommand('git', ['worktree', 'prune', '--expire', 'now'], { cwd: plan.repoRoot });
-
-    if (branchExists(plan.repoRoot, workerPlan.branchName)) {
-      runCommand('git', ['branch', '-D', workerPlan.branchName], { cwd: plan.repoRoot });
+    if (branchExistsImpl(plan.repoRoot, workerPlan.branchName)) {
+      runCommandImpl('git', ['branch', '-D', workerPlan.branchName], { cwd: plan.repoRoot });
     }
   }
+
+  runCommandImpl('git', ['worktree', 'prune', '--expire', 'now'], { cwd: plan.repoRoot });
 }
 
 function rollbackCreatedResources(plan, createdState, runtime = {}) {
@@ -437,9 +444,11 @@ function rollbackCreatedResources(plan, createdState, runtime = {}) {
     }
   }
 
+  const worktrees = listWorktreesImpl(plan.repoRoot);
+
   for (const workerPlan of [...createdState.workerPlans].reverse()) {
     const expectedWorktreePath = canonicalizePath(workerPlan.worktreePath);
-    const existingWorktree = listWorktreesImpl(plan.repoRoot).find(
+    const existingWorktree = worktrees.find(
       worktree => worktree.canonicalPath === expectedWorktreePath
     );
 
@@ -455,12 +464,6 @@ function rollbackCreatedResources(plan, createdState, runtime = {}) {
       fs.rmSync(workerPlan.worktreePath, { force: true, recursive: true });
     }
 
-    try {
-      runCommandImpl('git', ['worktree', 'prune', '--expire', 'now'], { cwd: plan.repoRoot });
-    } catch (error) {
-      errors.push(error.message);
-    }
-
     if (branchExistsImpl(plan.repoRoot, workerPlan.branchName)) {
       try {
         runCommandImpl('git', ['branch', '-D', workerPlan.branchName], { cwd: plan.repoRoot });
@@ -468,6 +471,12 @@ function rollbackCreatedResources(plan, createdState, runtime = {}) {
         errors.push(error.message);
       }
     }
+  }
+
+  try {
+    runCommandImpl('git', ['worktree', 'prune', '--expire', 'now'], { cwd: plan.repoRoot });
+  } catch (error) {
+    errors.push(error.message);
   }
 
   if (createdState.removeCoordinationDir && fs.existsSync(plan.coordinationDir)) {
@@ -496,7 +505,7 @@ function executePlan(plan, runtime = {}) {
   runCommandImpl('tmux', ['-V']);
 
   if (plan.replaceExisting) {
-    cleanupExistingImpl(plan);
+    cleanupExistingImpl(plan, runtime);
   } else {
     const hasSession = spawnSyncImpl('tmux', ['has-session', '-t', plan.sessionName], {
       encoding: 'utf8',
@@ -591,6 +600,7 @@ module.exports = {
   executePlan,
   materializePlan,
   normalizeSeedPaths,
+  cleanupExisting,
   overlaySeedPaths,
   rollbackCreatedResources,
   renderTemplate,
