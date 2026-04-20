@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # SaaS Application — Project CLAUDE.md
+> 🇹🇼 說明與指示
 
 > Real-world example for a Next.js + Supabase + Stripe SaaS application.
 > Copy this to your project root and customize for your stack.
@@ -112,16 +116,19 @@ export async function createProject(formData: FormData) {
 
 ```bash
 # Supabase
+> 🇹🇼 說明與指示
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=     # Server-only, never expose to client
 
 # Stripe
+> 🇹🇼 說明與指示
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 
 # App
+> 🇹🇼 說明與指示
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
@@ -144,16 +151,20 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 ```bash
 # Planning a feature
+> 🇹🇼 說明與指示
 /plan "Add team invitations with email notifications"
 
 # Developing with TDD
+> 🇹🇼 說明與指示
 /tdd
 
 # Before committing
+> 🇹🇼 說明與指示
 /code-review
 /security-scan
 
 # Before release
+> 🇹🇼 說明與指示
 /e2e
 /test-coverage
 ```

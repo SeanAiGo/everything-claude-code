@@ -1,21 +1,25 @@
 ---
-description: Legacy slash-entry shim for the e2e-testing skill. Prefer the skill directly.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Legacy slash-entry shim for the e2e-testing skill. Prefer the skill directly.
 ---
 
 # E2E Command (Legacy Shim)
+> 🇹🇼 命令指示
 
 Use this only if you still invoke `/e2e`. The maintained workflow lives in `skills/e2e-testing/SKILL.md`.
 
 ## Canonical Surface
+> 🇹🇼 命令指示
 
 - Prefer the `e2e-testing` skill directly.
 - Keep this file only as a compatibility entry point.
 
 ## Arguments
+> 🇹🇼 命令指示
 
 `$ARGUMENTS`
 
 ## Delegation
+> 🇹🇼 命令指示
 
 Apply the `e2e-testing` skill.
 - Generate or update Playwright coverage for the requested user flow.
@@ -60,9 +64,11 @@ Apply the `e2e-testing` skill.
 ```
 
 ## Running Tests
+> 🇹🇼 命令指示
 
 ```bash
 # Run the generated test
+> 🇹🇼 命令指示
 npx playwright test tests/e2e/markets/search-and-view.spec.ts
 
 Running 3 tests using 3 workers
@@ -80,6 +86,7 @@ Artifacts generated:
 ```
 
 ## Test Report
+> 🇹🇼 命令指示
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
@@ -106,6 +113,7 @@ PASS: E2E test suite ready for CI/CD integration!
 ```
 
 ## Test Artifacts
+> 🇹🇼 命令指示
 
 When tests run, the following artifacts are captured:
 
@@ -121,19 +129,24 @@ When tests run, the following artifacts are captured:
 - Console logs
 
 ## Viewing Artifacts
+> 🇹🇼 命令指示
 
 ```bash
 # View HTML report in browser
+> 🇹🇼 命令指示
 npx playwright show-report
 
 # View specific trace file
+> 🇹🇼 命令指示
 npx playwright show-trace artifacts/trace-abc123.zip
 
 # Screenshots are saved in artifacts/ directory
+> 🇹🇼 命令指示
 open artifacts/search-results.png
 ```
 
 ## Flaky Test Detection
+> 🇹🇼 命令指示
 
 If a test fails intermittently:
 
@@ -155,6 +168,7 @@ Quarantine recommendation: Mark as test.fixme() until fixed
 ```
 
 ## Browser Configuration
+> 🇹🇼 命令指示
 
 Tests run on multiple browsers by default:
 - PASS: Chromium (Desktop Chrome)
@@ -165,11 +179,13 @@ Tests run on multiple browsers by default:
 Configure in `playwright.config.ts` to adjust browsers.
 
 ## CI/CD Integration
+> 🇹🇼 命令指示
 
 Add to your CI pipeline:
 
 ```yaml
 # .github/workflows/e2e.yml
+> 🇹🇼 命令指示
 - name: Install Playwright
   run: npx playwright install --with-deps
 
@@ -185,6 +201,7 @@ Add to your CI pipeline:
 ```
 
 ## PMX-Specific Critical Flows
+> 🇹🇼 命令指示
 
 For PMX, prioritize these E2E tests:
 
@@ -206,6 +223,7 @@ For PMX, prioritize these E2E tests:
 6. Mobile responsive layout
 
 ## Best Practices
+> 🇹🇼 命令指示
 
 **DO:**
 - PASS: Use Page Object Model for maintainability
@@ -224,6 +242,7 @@ For PMX, prioritize these E2E tests:
 - FAIL: Test every edge case with E2E (use unit tests)
 
 ## Important Notes
+> 🇹🇼 命令指示
 
 **CRITICAL for PMX:**
 - E2E tests involving real money MUST run on testnet/staging only
@@ -232,6 +251,7 @@ For PMX, prioritize these E2E tests:
 - Use test wallets with small test funds only
 
 ## Integration with Other Commands
+> 🇹🇼 命令指示
 
 - Use `/plan` to identify critical journeys to test
 - Use `/tdd` for unit tests (faster, more granular)
@@ -239,6 +259,7 @@ For PMX, prioritize these E2E tests:
 - Use `/code-review` to verify test quality
 
 ## Related Agents
+> 🇹🇼 命令指示
 
 This command invokes the `e2e-runner` agent provided by ECC.
 
@@ -246,23 +267,30 @@ For manual installs, the source file lives at:
 `agents/e2e-runner.md`
 
 ## Quick Commands
+> 🇹🇼 命令指示
 
 ```bash
 # Run all E2E tests
+> 🇹🇼 命令指示
 npx playwright test
 
 # Run specific test file
+> 🇹🇼 命令指示
 npx playwright test tests/e2e/markets/search.spec.ts
 
 # Run in headed mode (see browser)
+> 🇹🇼 命令指示
 npx playwright test --headed
 
 # Debug test
+> 🇹🇼 命令指示
 npx playwright test --debug
 
 # Generate test code
+> 🇹🇼 命令指示
 npx playwright codegen http://localhost:3000
 
 # View report
+> 🇹🇼 命令指示
 npx playwright show-report
 ```

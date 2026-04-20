@@ -7,6 +7,7 @@ paths:
   - "**/*.cgi"
 ---
 # Perl Security
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/security.md](../common/security.md) with Perl-specific content.
 

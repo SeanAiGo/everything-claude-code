@@ -9,6 +9,7 @@ paths:
   - "**/CMakeLists.txt"
 ---
 # C++ Hooks
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/hooks.md](../common/hooks.md) with C++ specific content.
 
@@ -18,15 +19,19 @@ Run these checks before committing C++ changes:
 
 ```bash
 # Format check
+> 🇹🇼 規則說明與指示
 clang-format --dry-run --Werror src/*.cpp src/*.hpp
 
 # Static analysis
+> 🇹🇼 規則說明與指示
 clang-tidy src/*.cpp -- -std=c++17
 
 # Build
+> 🇹🇼 規則說明與指示
 cmake --build build
 
 # Tests
+> 🇹🇼 規則說明與指示
 ctest --test-dir build --output-on-failure
 ```
 

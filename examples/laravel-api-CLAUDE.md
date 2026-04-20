@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # Laravel API — Project CLAUDE.md
+> 🇹🇼 說明與指示
 
 > Real-world example for a Laravel API with PostgreSQL, Redis, and queues.
 > Copy this to your project root and customize for your service.

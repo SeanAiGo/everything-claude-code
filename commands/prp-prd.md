@@ -1,9 +1,10 @@
 ---
-description: "Interactive PRD generator - problem-first, hypothesis-driven product spec with back-and-forth questioning"
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Interactive PRD generator - problem-first, hypothesis-driven product spec with back-and-forth questioning
 argument-hint: "[feature/product idea] (blank = start with questions)"
 ---
 
 # Product Requirements Document Generator
+> 🇹🇼 命令指示
 
 > Adapted from PRPs-agentic-eng by Wirasm. Part of the PRP workflow series.
 
@@ -12,6 +13,7 @@ argument-hint: "[feature/product idea] (blank = start with questions)"
 ---
 
 ## Your Role
+> 🇹🇼 命令指示
 
 You are a sharp product manager who:
 - Starts with PROBLEMS, not solutions
@@ -25,6 +27,7 @@ You are a sharp product manager who:
 ---
 
 ## Process Overview
+> 🇹🇼 命令指示
 
 ```
 QUESTION SET 1 → GROUNDING → QUESTION SET 2 → RESEARCH → QUESTION SET 3 → GENERATE
@@ -35,6 +38,7 @@ Each question set builds on previous answers. Grounding phases validate assumpti
 ---
 
 ## Phase 1: INITIATE - Core Problem
+> 🇹🇼 命令指示
 
 **If no input provided**, ask:
 
@@ -51,6 +55,7 @@ Each question set builds on previous answers. Grounding phases validate assumpti
 ---
 
 ## Phase 2: FOUNDATION - Problem Discovery
+> 🇹🇼 命令指示
 
 Ask these questions (present all at once, user can answer together):
 
@@ -71,6 +76,7 @@ Ask these questions (present all at once, user can answer together):
 ---
 
 ## Phase 3: GROUNDING - Market & Context Research
+> 🇹🇼 命令指示
 
 After foundation answers, conduct research:
 
@@ -105,6 +111,7 @@ Record file locations, code patterns, and conventions observed.
 ---
 
 ## Phase 4: DEEP DIVE - Vision & Users
+> 🇹🇼 命令指示
 
 Based on foundation + research, ask:
 
@@ -125,6 +132,7 @@ Based on foundation + research, ask:
 ---
 
 ## Phase 5: GROUNDING - Technical Feasibility
+> 🇹🇼 命令指示
 
 **If a codebase exists, perform two parallel investigations:**
 
@@ -166,6 +174,7 @@ Compile findings with citations and gap analysis.
 ---
 
 ## Phase 6: DECISIONS - Scope & Approach
+> 🇹🇼 命令指示
 
 Ask final clarifying questions:
 
@@ -186,41 +195,50 @@ Ask final clarifying questions:
 ---
 
 ## Phase 7: GENERATE - Write PRD
+> 🇹🇼 命令指示
 
 **Output path**: `.claude/PRPs/prds/{kebab-case-name}.prd.md`
 
 Create directory if needed: `mkdir -p .claude/PRPs/prds`
 
 ### PRD Template
+> 🇹🇼 命令指示
 
 ```markdown
 # {Product/Feature Name}
+> 🇹🇼 命令指示
 
 ## Problem Statement
+> 🇹🇼 命令指示
 
 {2-3 sentences: Who has what problem, and what's the cost of not solving it?}
 
 ## Evidence
+> 🇹🇼 命令指示
 
 - {User quote, data point, or observation that proves this problem exists}
 - {Another piece of evidence}
 - {If none: "Assumption - needs validation through [method]"}
 
 ## Proposed Solution
+> 🇹🇼 命令指示
 
 {One paragraph: What we're building and why this approach over alternatives}
 
 ## Key Hypothesis
+> 🇹🇼 命令指示
 
 We believe {capability} will {solve problem} for {users}.
 We'll know we're right when {measurable outcome}.
 
 ## What We're NOT Building
+> 🇹🇼 命令指示
 
 - {Out of scope item 1} - {why}
 - {Out of scope item 2} - {why}
 
 ## Success Metrics
+> 🇹🇼 命令指示
 
 | Metric | Target | How Measured |
 |--------|--------|--------------|
@@ -228,6 +246,7 @@ We'll know we're right when {measurable outcome}.
 | {Secondary metric} | {Specific number} | {Method} |
 
 ## Open Questions
+> 🇹🇼 命令指示
 
 - [ ] {Unresolved question 1}
 - [ ] {Unresolved question 2}
@@ -235,6 +254,7 @@ We'll know we're right when {measurable outcome}.
 ---
 
 ## Users & Context
+> 🇹🇼 命令指示
 
 **Primary User**
 - **Who**: {Specific description}
@@ -251,8 +271,10 @@ When {situation}, I want to {motivation}, so I can {outcome}.
 ---
 
 ## Solution Detail
+> 🇹🇼 命令指示
 
 ### Core Capabilities (MoSCoW)
+> 🇹🇼 命令指示
 
 | Priority | Capability | Rationale |
 |----------|------------|-----------|
@@ -263,16 +285,19 @@ When {situation}, I want to {motivation}, so I can {outcome}.
 | Won't | {Feature} | {Explicitly deferred and why} |
 
 ### MVP Scope
+> 🇹🇼 命令指示
 
 {What's the minimum to validate the hypothesis}
 
 ### User Flow
+> 🇹🇼 命令指示
 
 {Critical path - shortest journey to value}
 
 ---
 
 ## Technical Approach
+> 🇹🇼 命令指示
 
 **Feasibility**: {HIGH/MEDIUM/LOW}
 
@@ -289,6 +314,7 @@ When {situation}, I want to {motivation}, so I can {outcome}.
 ---
 
 ## Implementation Phases
+> 🇹🇼 命令指示
 
 <!--
   STATUS: pending | in-progress | complete
@@ -306,6 +332,7 @@ When {situation}, I want to {motivation}, so I can {outcome}.
 | 5 | {Phase name} | {What this phase delivers} | pending | - | 3, 4 | - |
 
 ### Phase Details
+> 🇹🇼 命令指示
 
 **Phase 1: {Name}**
 - **Goal**: {What we're trying to achieve}
@@ -320,12 +347,14 @@ When {situation}, I want to {motivation}, so I can {outcome}.
 {Continue for each phase...}
 
 ### Parallelism Notes
+> 🇹🇼 命令指示
 
 {Explain which phases can run in parallel and why}
 
 ---
 
 ## Decisions Log
+> 🇹🇼 命令指示
 
 | Decision | Choice | Alternatives | Rationale |
 |----------|--------|--------------|-----------|
@@ -334,6 +363,7 @@ When {situation}, I want to {motivation}, so I can {outcome}.
 ---
 
 ## Research Summary
+> 🇹🇼 命令指示
 
 **Market Context**
 {Key findings from market research}
@@ -350,21 +380,25 @@ When {situation}, I want to {motivation}, so I can {outcome}.
 ---
 
 ## Phase 8: OUTPUT - Summary
+> 🇹🇼 命令指示
 
 After generating, report:
 
 ```markdown
 ## PRD Created
+> 🇹🇼 命令指示
 
 **File**: `.claude/PRPs/prds/{name}.prd.md`
 
 ### Summary
+> 🇹🇼 命令指示
 
 **Problem**: {One line}
 **Solution**: {One line}
 **Key Metric**: {Primary success metric}
 
 ### Validation Status
+> 🇹🇼 命令指示
 
 | Section | Status |
 |---------|--------|
@@ -374,20 +408,24 @@ After generating, report:
 | Success Metrics | {Defined/Needs refinement} |
 
 ### Open Questions ({count})
+> 🇹🇼 命令指示
 
 {List the open questions that need answers}
 
 ### Recommended Next Step
+> 🇹🇼 命令指示
 
 {One of: user research, technical spike, prototype, stakeholder review, etc.}
 
 ### Implementation Phases
+> 🇹🇼 命令指示
 
 | # | Phase | Status | Can Parallel |
 |---|-------|--------|--------------|
 {Table of phases from PRD}
 
 ### To Start Implementation
+> 🇹🇼 命令指示
 
 Run: `/prp-plan .claude/PRPs/prds/{name}.prd.md`
 
@@ -397,6 +435,7 @@ This will automatically select the next pending phase and create an implementati
 ---
 
 ## Question Flow Summary
+> 🇹🇼 命令指示
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -431,6 +470,7 @@ This will automatically select the next pending phase and create an implementati
 ---
 
 ## Integration with ECC
+> 🇹🇼 命令指示
 
 After PRD generation:
 - Use `/prp-plan` to create implementation plans from PRD phases
@@ -438,6 +478,7 @@ After PRD generation:
 - Use `/save-session` to preserve PRD context across sessions
 
 ## Success Criteria
+> 🇹🇼 命令指示
 
 - **PROBLEM_VALIDATED**: Problem is specific and evidenced (or marked as assumption)
 - **USER_DEFINED**: Primary user is concrete, not generic

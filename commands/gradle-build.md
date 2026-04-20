@@ -1,12 +1,14 @@
 ---
-description: Fix Gradle build errors for Android and KMP projects
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Fix Gradle build errors for Android and KMP projects
 ---
 
 # Gradle Build Fix
+> 🇹🇼 命令指示
 
 Incrementally fix Gradle build and compilation errors for Android and Kotlin Multiplatform projects.
 
 ## Step 1: Detect Build Configuration
+> 🇹🇼 命令指示
 
 Identify the project type and run the appropriate build:
 
@@ -20,6 +22,7 @@ Identify the project type and run the appropriate build:
 Also check `gradle.properties` and `local.properties` for configuration.
 
 ## Step 2: Parse and Group Errors
+> 🇹🇼 命令指示
 
 1. Run the build command and capture output
 2. Separate Kotlin compilation errors from Gradle configuration errors
@@ -27,6 +30,7 @@ Also check `gradle.properties` and `local.properties` for configuration.
 4. Sort: configuration errors first, then compilation errors by dependency order
 
 ## Step 3: Fix Loop
+> 🇹🇼 命令指示
 
 For each error:
 
@@ -42,6 +46,7 @@ For each error:
 5. **Continue** — Move to next error
 
 ## Step 4: Guardrails
+> 🇹🇼 命令指示
 
 Stop and ask the user if:
 - Fix introduces more errors than it resolves
@@ -51,6 +56,7 @@ Stop and ask the user if:
 - Error is in generated code (Room, SQLDelight, KSP)
 
 ## Step 5: Summary
+> 🇹🇼 命令指示
 
 Report:
 - Errors fixed (module, file, description)
@@ -59,6 +65,7 @@ Report:
 - Suggested next steps
 
 ## Common Gradle/KMP Fixes
+> 🇹🇼 命令指示
 
 | Error | Fix |
 |-------|-----|

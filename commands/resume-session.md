@@ -1,13 +1,15 @@
 ---
-description: Load the most recent session file from ~/.claude/session-data/ and resume work with full context from where the last session ended.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Load the most recent session file from ~/.claude/session-data/ and resume work with full context from where the last session ended.
 ---
 
 # Resume Session Command
+> 🇹🇼 命令指示
 
 Load the last saved session state and orient fully before doing any work.
 This command is the counterpart to `/save-session`.
 
 ## When to Use
+> 🇹🇼 命令指示
 
 - Starting a new session to continue work from a previous day
 - After starting a fresh session due to context limits
@@ -15,6 +17,7 @@ This command is the counterpart to `/save-session`.
 - Any time you have a session file and want Claude to fully absorb it before proceeding
 
 ## Usage
+> 🇹🇼 命令指示
 
 ```
 /resume-session                                                      # loads most recent file in ~/.claude/session-data/
@@ -24,8 +27,10 @@ This command is the counterpart to `/save-session`.
 ```
 
 ## Process
+> 🇹🇼 命令指示
 
 ### Step 1: Find the session file
+> 🇹🇼 命令指示
 
 If no argument provided:
 
@@ -48,10 +53,12 @@ If an argument is provided:
 - If not found, report clearly and stop
 
 ### Step 2: Read the entire session file
+> 🇹🇼 命令指示
 
 Read the complete file. Do not summarize yet.
 
 ### Step 3: Confirm understanding
+> 🇹🇼 命令指示
 
 Respond with a structured briefing in this exact format:
 
@@ -84,6 +91,7 @@ Ready to continue. What would you like to do?
 ```
 
 ### Step 4: Wait for the user
+> 🇹🇼 命令指示
 
 Do NOT start working automatically. Do NOT touch any files. Wait for the user to say what to do next.
 
@@ -94,6 +102,7 @@ If no next step is defined — ask the user where to start, and optionally sugge
 ---
 
 ## Edge Cases
+> 🇹🇼 命令指示
 
 **Multiple sessions for the same date** (`2024-01-15-session.tmp`, `2024-01-15-abc123de-session.tmp`):
 Load the most recently modified matching file for that date, regardless of whether it uses the legacy no-id format or the current short-id format.
@@ -113,6 +122,7 @@ Report: "Session file found but appears empty or unreadable. You may need to cre
 ---
 
 ## Example Output
+> 🇹🇼 命令指示
 
 ```
 SESSION LOADED: /Users/you/.claude/session-data/2024-01-15-abc123de-session.tmp
@@ -149,6 +159,7 @@ Ready to continue. What would you like to do?
 ---
 
 ## Notes
+> 🇹🇼 命令指示
 
 - Never modify the session file when loading it — it's a read-only historical record
 - The briefing format is fixed — do not skip sections even if they are empty

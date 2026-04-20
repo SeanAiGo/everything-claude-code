@@ -1,21 +1,25 @@
 ---
-description: Legacy slash-entry shim for the tdd-workflow skill. Prefer the skill directly.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Legacy slash-entry shim for the tdd-workflow skill. Prefer the skill directly.
 ---
 
 # TDD Command (Legacy Shim)
+> 🇹🇼 命令指示
 
 Use this only if you still invoke `/tdd`. The maintained workflow lives in `skills/tdd-workflow/SKILL.md`.
 
 ## Canonical Surface
+> 🇹🇼 命令指示
 
 - Prefer the `tdd-workflow` skill directly.
 - Keep this file only as a compatibility entry point.
 
 ## Arguments
+> 🇹🇼 命令指示
 
 `$ARGUMENTS`
 
 ## Delegation
+> 🇹🇼 命令指示
 
 Apply the `tdd-workflow` skill.
 - Stay strict on RED -> GREEN -> REFACTOR.
@@ -25,6 +29,7 @@ Apply the `tdd-workflow` skill.
 ```
 
 ## Step 3: Run Tests - Verify FAIL
+> 🇹🇼 命令指示
 
 ```bash
 npm test lib/liquidity.test.ts
@@ -39,6 +44,7 @@ FAIL lib/liquidity.test.ts
 PASS: Tests fail as expected. Ready to implement.
 
 ## Step 4: Implement Minimal Code (GREEN)
+> 🇹🇼 命令指示
 
 ```typescript
 // lib/liquidity.ts
@@ -70,6 +76,7 @@ export function calculateLiquidityScore(market: MarketData): number {
 ```
 
 ## Step 5: Run Tests - Verify PASS
+> 🇹🇼 命令指示
 
 ```bash
 npm test lib/liquidity.test.ts
@@ -85,6 +92,7 @@ PASS lib/liquidity.test.ts
 PASS: All tests passing!
 
 ## Step 6: Refactor (IMPROVE)
+> 🇹🇼 命令指示
 
 ```typescript
 // lib/liquidity.ts - Refactored with constants and better readability
@@ -127,6 +135,7 @@ export function calculateLiquidityScore(market: MarketData): number {
 ```
 
 ## Step 7: Verify Tests Still Pass
+> 🇹🇼 命令指示
 
 ```bash
 npm test lib/liquidity.test.ts
@@ -142,6 +151,7 @@ PASS lib/liquidity.test.ts
 PASS: Refactoring complete, tests still passing!
 
 ## Step 8: Check Coverage
+> 🇹🇼 命令指示
 
 ```bash
 npm test -- --coverage lib/liquidity.test.ts
@@ -157,6 +167,7 @@ PASS: TDD session complete!
 ```
 
 ## TDD Best Practices
+> 🇹🇼 命令指示
 
 **DO:**
 - PASS: Write the test FIRST, before any implementation
@@ -175,6 +186,7 @@ PASS: TDD session complete!
 - FAIL: Mock everything (prefer integration tests)
 
 ## Test Types to Include
+> 🇹🇼 命令指示
 
 **Unit Tests** (Function-level):
 - Happy path scenarios
@@ -194,6 +206,7 @@ PASS: TDD session complete!
 - Full stack integration
 
 ## Coverage Requirements
+> 🇹🇼 命令指示
 
 - **80% minimum** for all code
 - **100% required** for:
@@ -203,6 +216,7 @@ PASS: TDD session complete!
   - Core business logic
 
 ## Important Notes
+> 🇹🇼 命令指示
 
 **MANDATORY**: Tests must be written BEFORE implementation. The TDD cycle is:
 
@@ -213,6 +227,7 @@ PASS: TDD session complete!
 Never skip the RED phase. Never write code before tests.
 
 ## Integration with Other Commands
+> 🇹🇼 命令指示
 
 - Use `/plan` first to understand what to build
 - Use `/tdd` to implement with tests
@@ -221,6 +236,7 @@ Never skip the RED phase. Never write code before tests.
 - Use `/test-coverage` to verify coverage
 
 ## Related Agents
+> 🇹🇼 命令指示
 
 This command invokes the `tdd-guide` agent provided by ECC.
 

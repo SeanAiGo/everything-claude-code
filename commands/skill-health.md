@@ -1,14 +1,16 @@
 ---
 name: skill-health
-description: Show skill portfolio health dashboard with charts and analytics
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Show skill portfolio health dashboard with charts and analytics
 command: true
 ---
 
 # Skill Health Dashboard
+> 🇹🇼 命令指示
 
 Shows a comprehensive health dashboard for all skills in the portfolio with success rate sparklines, failure pattern clustering, pending amendments, and version history.
 
 ## Implementation
+> 🇹🇼 命令指示
 
 Run the skill health CLI in dashboard mode:
 
@@ -32,6 +34,7 @@ node "$ECC_ROOT/scripts/skills-health.js" --dashboard --json
 ```
 
 ## Usage
+> 🇹🇼 命令指示
 
 ```
 /skill-health                    # Full dashboard view
@@ -40,6 +43,7 @@ node "$ECC_ROOT/scripts/skills-health.js" --dashboard --json
 ```
 
 ## What to Do
+> 🇹🇼 命令指示
 
 1. Run the skills-health.js script with --dashboard flag
 2. Display the output to the user
@@ -47,6 +51,7 @@ node "$ECC_ROOT/scripts/skills-health.js" --dashboard --json
 4. If there are pending amendments, suggest reviewing them
 
 ## Panels
+> 🇹🇼 命令指示
 
 - **Success Rate (30d)** — Sparkline charts showing daily success rates per skill
 - **Failure Patterns** — Clustered failure reasons with horizontal bar chart

@@ -4,6 +4,7 @@ paths:
   - "**/*.kts"
 ---
 # Kotlin Patterns
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/patterns.md](../common/patterns.md) with Kotlin and Android/KMP-specific content.
 

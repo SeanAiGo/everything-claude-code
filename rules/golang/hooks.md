@@ -5,6 +5,7 @@ paths:
   - "**/go.sum"
 ---
 # Go Hooks
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/hooks.md](../common/hooks.md) with Go specific content.
 

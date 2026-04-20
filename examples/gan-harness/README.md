@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # GAN-Style Harness Examples
+> 🇹🇼 說明與指示
 
 Examples showing how to use the Generator-Evaluator harness for different project types.
 
@@ -6,15 +10,19 @@ Examples showing how to use the Generator-Evaluator harness for different projec
 
 ```bash
 # Full-stack web app (uses all three agents)
+> 🇹🇼 說明與指示
 ./scripts/gan-harness.sh "Build a project management app with Kanban boards and team collaboration"
 
 # Frontend design (skip planner, focus on design iterations)
+> 🇹🇼 說明與指示
 GAN_SKIP_PLANNER=true ./scripts/gan-harness.sh "Create a stunning landing page for a crypto portfolio tracker"
 
 # API-only (no browser testing needed)
+> 🇹🇼 說明與指示
 GAN_EVAL_MODE=code-only ./scripts/gan-harness.sh "Build a REST API for a recipe sharing platform with search and ratings"
 
 # Tight budget (fewer iterations, lower threshold)
+> 🇹🇼 說明與指示
 GAN_MAX_ITERATIONS=5 GAN_PASS_THRESHOLD=6.5 ./scripts/gan-harness.sh "Build a todo app with categories and due dates"
 ```
 
@@ -22,9 +30,11 @@ GAN_MAX_ITERATIONS=5 GAN_PASS_THRESHOLD=6.5 ./scripts/gan-harness.sh "Build a to
 
 ```bash
 # In Claude Code interactive mode:
+> 🇹🇼 說明與指示
 /project:gan-build "Build a music streaming dashboard with playlists, visualizer, and social features"
 
 # With options:
+> 🇹🇼 說明與指示
 /project:gan-build "Build a recipe sharing platform" --max-iterations 10 --pass-threshold 7.5 --eval-mode screenshot
 ```
 
@@ -34,6 +44,7 @@ For maximum control, run each agent separately:
 
 ```bash
 # Step 1: Plan (produces spec.md)
+> 🇹🇼 說明與指示
 claude -p --model opus "$(cat agents/gan-planner.md)
 
 Your brief: 'Build a retro game maker with sprite editor and level designer'
@@ -41,12 +52,14 @@ Your brief: 'Build a retro game maker with sprite editor and level designer'
 Write the full spec to gan-harness/spec.md and eval rubric to gan-harness/eval-rubric.md."
 
 # Step 2: Generate (iteration 1)
+> 🇹🇼 說明與指示
 claude -p --model opus "$(cat agents/gan-generator.md)
 
 Iteration 1. Read gan-harness/spec.md. Build the initial application.
 Start dev server on port 3000. Commit as iteration-001."
 
 # Step 3: Evaluate (iteration 1)
+> 🇹🇼 說明與指示
 claude -p --model opus "$(cat agents/gan-evaluator.md)
 
 Iteration 1. Read gan-harness/eval-rubric.md.
@@ -54,6 +67,7 @@ Test http://localhost:3000. Write feedback to gan-harness/feedback/feedback-001.
 Be ruthlessly strict."
 
 # Step 4: Generate (iteration 2 — reads feedback)
+> 🇹🇼 說明與指示
 claude -p --model opus "$(cat agents/gan-generator.md)
 
 Iteration 2. Read gan-harness/feedback/feedback-001.md FIRST.
@@ -61,6 +75,7 @@ Address every issue. Then read gan-harness/spec.md for remaining features.
 Commit as iteration-002."
 
 # Repeat steps 3-4 until satisfied
+> 🇹🇼 說明與指示
 ```
 
 ## Example: Custom Evaluation Criteria
@@ -71,6 +86,7 @@ For non-visual projects (APIs, CLIs, libraries), customize the rubric:
 mkdir -p gan-harness
 cat > gan-harness/eval-rubric.md << 'EOF'
 # API Evaluation Rubric
+> 🇹🇼 說明與指示
 
 ### Correctness (weight: 0.4)
 - Do all endpoints return expected data?

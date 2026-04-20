@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # Example Project CLAUDE.md
+> 🇹🇼 說明與指示
 
 This is an example project-level CLAUDE.md file. Place this in your project root.
 
@@ -78,10 +82,12 @@ try {
 
 ```bash
 # Required
+> 🇹🇼 說明與指示
 DATABASE_URL=
 API_KEY=
 
 # Optional
+> 🇹🇼 說明與指示
 DEBUG=false
 ```
 

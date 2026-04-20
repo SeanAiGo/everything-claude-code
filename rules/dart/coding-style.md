@@ -5,6 +5,7 @@ paths:
   - "**/analysis_options.yaml"
 ---
 # Dart/Flutter Coding Style
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/coding-style.md](../common/coding-style.md) with Dart and Flutter-specific content.
 

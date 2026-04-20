@@ -6,6 +6,7 @@ paths:
   - "**/Info.plist"
 ---
 # Dart/Flutter Security
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/security.md](../common/security.md) with Dart, Flutter, and mobile-specific content.
 

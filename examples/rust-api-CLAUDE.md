@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # Rust API Service — Project CLAUDE.md
+> 🇹🇼 說明與指示
 
 > Real-world example for a Rust API service with Axum, PostgreSQL, and Docker.
 > Copy this to your project root and customize for your service.
@@ -222,18 +226,22 @@ async fn test_create_user_duplicate_email() {
 
 ```bash
 # Server
+> 🇹🇼 說明與指示
 HOST=0.0.0.0
 PORT=8080
 RUST_LOG=info,tower_http=debug
 
 # Database
+> 🇹🇼 說明與指示
 DATABASE_URL=postgres://user:pass@localhost:5432/myapp
 
 # Auth
+> 🇹🇼 說明與指示
 JWT_SECRET=your-secret-key-min-32-chars
 JWT_EXPIRY_HOURS=24
 
 # Optional
+> 🇹🇼 說明與指示
 CORS_ALLOWED_ORIGINS=http://localhost:3000
 ```
 
@@ -241,22 +249,28 @@ CORS_ALLOWED_ORIGINS=http://localhost:3000
 
 ```bash
 # Run all tests
+> 🇹🇼 說明與指示
 cargo test
 
 # Run with output
+> 🇹🇼 說明與指示
 cargo test -- --nocapture
 
 # Run specific test module
+> 🇹🇼 說明與指示
 cargo test api_users
 
 # Check coverage (requires cargo-llvm-cov)
+> 🇹🇼 說明與指示
 cargo llvm-cov --html
 open target/llvm-cov/html/index.html
 
 # Lint
+> 🇹🇼 說明與指示
 cargo clippy -- -D warnings
 
 # Format check
+> 🇹🇼 說明與指示
 cargo fmt -- --check
 ```
 
@@ -264,16 +278,20 @@ cargo fmt -- --check
 
 ```bash
 # Planning
+> 🇹🇼 說明與指示
 /plan "Add order fulfillment with Stripe payment"
 
 # Development with TDD
+> 🇹🇼 說明與指示
 /tdd                    # cargo test-based TDD workflow
 
 # Review
+> 🇹🇼 說明與指示
 /code-review            # Rust-specific code review
 /security-scan          # Dependency audit + unsafe scan
 
 # Verification
+> 🇹🇼 說明與指示
 /verify                 # Build, clippy, test, security scan
 ```
 

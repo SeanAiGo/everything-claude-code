@@ -1,4 +1,8 @@
+---
+description: 📝 【文件定位】這是一個範例（Example）檔案，提供實際應用的參考。
+---
 # User-Level CLAUDE.md Example
+> 🇹🇼 說明與指示
 
 This is an example user-level CLAUDE.md file. Place at `~/.claude/CLAUDE.md`.
 

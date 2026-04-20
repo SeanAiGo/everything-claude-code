@@ -6,6 +6,7 @@ paths:
   - "**/appsettings*.json"
 ---
 # C# Security
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/security.md](../common/security.md) with C#-specific content.
 

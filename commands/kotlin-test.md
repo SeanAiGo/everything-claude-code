@@ -1,12 +1,14 @@
 ---
-description: Enforce TDD workflow for Kotlin. Write Kotest tests first, then implement. Verify 80%+ coverage with Kover.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Enforce TDD workflow for Kotlin. Write Kotest tests first, then implement. Verify 80%+ coverage with Kover.
 ---
 
 # Kotlin TDD Command
+> 🇹🇼 命令指示
 
 This command enforces test-driven development methodology for Kotlin code using Kotest, MockK, and Kover.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Define Types/Interfaces**: Scaffold function signatures first
 2. **Write Kotest Tests**: Create comprehensive test specs (RED)
@@ -16,6 +18,7 @@ This command enforces test-driven development methodology for Kotlin code using 
 6. **Check Coverage**: Ensure 80%+ coverage with Kover
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/kotlin-test` when:
 - Implementing new Kotlin functions or classes
@@ -25,6 +28,7 @@ Use `/kotlin-test` when:
 - Learning TDD workflow in Kotlin
 
 ## TDD Cycle
+> 🇹🇼 命令指示
 
 ```
 RED     -> Write failing Kotest test
@@ -34,14 +38,17 @@ REPEAT  -> Next test case
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ````text
 User: /kotlin-test I need a function to validate user registration requests
 
 Agent:
 # TDD Session: Registration Validator
+> 🇹🇼 命令指示
 
 ## Step 1: Define Interface
+> 🇹🇼 命令指示
 
 ```kotlin
 // validator/RegistrationValidator.kt
@@ -64,6 +71,7 @@ fun validateRegistration(request: RegistrationRequest): ValidationResult {
 ```
 
 ## Step 2: Write Kotest Tests (RED)
+> 🇹🇼 命令指示
 
 ```kotlin
 // validator/RegistrationValidatorTest.kt
@@ -141,6 +149,7 @@ class RegistrationValidatorTest : FunSpec({
 ```
 
 ## Step 3: Run Tests - Verify FAIL
+> 🇹🇼 命令指示
 
 ```bash
 $ ./gradlew test
@@ -154,6 +163,7 @@ FAILED (5 tests, 0 passed, 5 failed)
 ✓ Tests fail as expected (NotImplementedError).
 
 ## Step 4: Implement Minimal Code (GREEN)
+> 🇹🇼 命令指示
 
 ```kotlin
 // validator/RegistrationValidator.kt
@@ -175,6 +185,7 @@ fun validateRegistration(request: RegistrationRequest): ValidationResult {
 ```
 
 ## Step 5: Run Tests - Verify PASS
+> 🇹🇼 命令指示
 
 ```bash
 $ ./gradlew test
@@ -191,6 +202,7 @@ PASSED (5 tests, 5 passed, 0 failed)
 ✓ All tests passing!
 
 ## Step 6: Check Coverage
+> 🇹🇼 命令指示
 
 ```bash
 $ ./gradlew koverHtmlReport
@@ -201,11 +213,14 @@ Coverage: 100.0% of statements
 ✓ Coverage: 100%
 
 ## TDD Complete!
+> 🇹🇼 命令指示
 ````
 
 ## Test Patterns
+> 🇹🇼 命令指示
 
 ### StringSpec (Simplest)
+> 🇹🇼 命令指示
 
 ```kotlin
 class CalculatorTest : StringSpec({
@@ -216,6 +231,7 @@ class CalculatorTest : StringSpec({
 ```
 
 ### BehaviorSpec (BDD)
+> 🇹🇼 命令指示
 
 ```kotlin
 class OrderServiceTest : BehaviorSpec({
@@ -228,6 +244,7 @@ class OrderServiceTest : BehaviorSpec({
 ```
 
 ### Data-Driven Tests
+> 🇹🇼 命令指示
 
 ```kotlin
 class ParserTest : FunSpec({
@@ -240,6 +257,7 @@ class ParserTest : FunSpec({
 ```
 
 ### Coroutine Testing
+> 🇹🇼 命令指示
 
 ```kotlin
 class AsyncServiceTest : FunSpec({
@@ -253,28 +271,36 @@ class AsyncServiceTest : FunSpec({
 ```
 
 ## Coverage Commands
+> 🇹🇼 命令指示
 
 ```bash
 # Run tests with coverage
+> 🇹🇼 命令指示
 ./gradlew koverHtmlReport
 
 # Verify coverage thresholds
+> 🇹🇼 命令指示
 ./gradlew koverVerify
 
 # XML report for CI
+> 🇹🇼 命令指示
 ./gradlew koverXmlReport
 
 # Open HTML report
+> 🇹🇼 命令指示
 open build/reports/kover/html/index.html
 
 # Run specific test class
+> 🇹🇼 命令指示
 ./gradlew test --tests "com.example.UserServiceTest"
 
 # Run with verbose output
+> 🇹🇼 命令指示
 ./gradlew test --info
 ```
 
 ## Coverage Targets
+> 🇹🇼 命令指示
 
 | Code Type | Target |
 |-----------|--------|
@@ -284,6 +310,7 @@ open build/reports/kover/html/index.html
 | Generated code | Exclude |
 
 ## TDD Best Practices
+> 🇹🇼 命令指示
 
 **DO:**
 - Write test FIRST, before any implementation
@@ -301,12 +328,14 @@ open build/reports/kover/html/index.html
 - Ignore flaky tests
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/kotlin-build` - Fix build errors
 - `/kotlin-review` - Review code after implementation
 - `/verify` - Run full verification loop
 
 ## Related
+> 🇹🇼 命令指示
 
 - Skill: `skills/kotlin-testing/`
 - Skill: `skills/tdd-workflow/`

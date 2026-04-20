@@ -1,12 +1,14 @@
 ---
-description: "Extract reusable patterns from the session, self-evaluate quality before saving, and determine the right save location (Global vs Project)."
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Extract reusable patterns from the session, self-evaluate quality before saving, and determine the right save location (Global vs Project).
 ---
 
 # /learn-eval - Extract, Evaluate, then Save
+> 🇹🇼 命令指示
 
 Extends `/learn` with a quality gate, save-location decision, and knowledge-placement awareness before writing any skill file.
 
 ## What to Extract
+> 🇹🇼 命令指示
 
 Look for:
 
@@ -16,6 +18,7 @@ Look for:
 4. **Project-Specific Patterns** — conventions, architecture decisions, integration patterns
 
 ## Process
+> 🇹🇼 命令指示
 
 1. Review the session for extractable patterns
 2. Identify the most valuable/reusable insight
@@ -37,23 +40,28 @@ origin: auto-extracted
 ---
 
 # [Descriptive Pattern Name]
+> 🇹🇼 命令指示
 
 **Extracted:** [Date]
 **Context:** [Brief description of when this applies]
 
 ## Problem
+> 🇹🇼 命令指示
 [What problem this solves - be specific]
 
 ## Solution
+> 🇹🇼 命令指示
 [The pattern/technique/workaround - with code examples]
 
 ## When to Use
+> 🇹🇼 命令指示
 [Trigger conditions]
 ```
 
 5. **Quality gate — Checklist + Holistic verdict**
 
    ### 5a. Required checklist (verify by actually reading files)
+> 🇹🇼 命令指示
 
    Execute **all** of the following before evaluating the draft:
 
@@ -63,6 +71,7 @@ origin: auto-extracted
    - [ ] Confirm this is a reusable pattern, not a one-off fix
 
    ### 5b. Holistic verdict
+> 🇹🇼 命令指示
 
    Synthesize the checklist results and draft quality, then choose **one** of the following:
 
@@ -90,24 +99,29 @@ origin: auto-extracted
 7. Save / Absorb to the determined location
 
 ## Output Format for Step 5
+> 🇹🇼 命令指示
 
 ```
 ### Checklist
+> 🇹🇼 命令指示
 - [x] skills/ grep: no overlap (or: overlap found → details)
 - [x] MEMORY.md: no overlap (or: overlap found → details)
 - [x] Existing skill append: new file appropriate (or: should append to [X])
 - [x] Reusability: confirmed (or: one-off → Drop)
 
 ### Verdict: Save / Improve then Save / Absorb into [X] / Drop
+> 🇹🇼 命令指示
 
 **Rationale:** (1-2 sentences explaining the verdict)
 ```
 
 ## Design Rationale
+> 🇹🇼 命令指示
 
 This version replaces the previous 5-dimension numeric scoring rubric (Specificity, Actionability, Scope Fit, Non-redundancy, Coverage scored 1-5) with a checklist-based holistic verdict system. Modern frontier models (Opus 4.6+) have strong contextual judgment — forcing rich qualitative signals into numeric scores loses nuance and can produce misleading totals. The holistic approach lets the model weigh all factors naturally, producing more accurate save/drop decisions while the explicit checklist ensures no critical check is skipped.
 
 ## Notes
+> 🇹🇼 命令指示
 
 - Don't extract trivial fixes (typos, simple syntax errors)
 - Don't extract one-time issues (specific API outages, etc.)

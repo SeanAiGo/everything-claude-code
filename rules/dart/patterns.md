@@ -4,6 +4,7 @@ paths:
   - "**/pubspec.yaml"
 ---
 # Dart/Flutter Patterns
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/patterns.md](../common/patterns.md) with Dart, Flutter, and common ecosystem-specific content.
 

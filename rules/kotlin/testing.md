@@ -4,6 +4,7 @@ paths:
   - "**/*.kts"
 ---
 # Kotlin Testing
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/testing.md](../common/testing.md) with Kotlin and Android/KMP-specific content.
 

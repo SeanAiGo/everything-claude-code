@@ -1,12 +1,14 @@
 ---
-description: Retrieve a Jira ticket, analyze requirements, update status, or add comments. Uses the jira-integration skill and MCP or REST API.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Retrieve a Jira ticket, analyze requirements, update status, or add comments. Uses the jira-integration skill and MCP or REST API.
 ---
 
 # Jira Command
+> 🇹🇼 命令指示
 
 Interact with Jira tickets directly from your workflow — fetch tickets, analyze requirements, add comments, and transition status.
 
 ## Usage
+> 🇹🇼 命令指示
 
 ```
 /jira get <TICKET-KEY>          # Fetch and analyze a ticket
@@ -16,6 +18,7 @@ Interact with Jira tickets directly from your workflow — fetch tickets, analyz
 ```
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Get & Analyze** — Fetch a Jira ticket and extract requirements, acceptance criteria, test scenarios, and dependencies
 2. **Comment** — Add structured progress updates to a ticket
@@ -23,8 +26,10 @@ Interact with Jira tickets directly from your workflow — fetch tickets, analyz
 4. **Search** — Find issues using JQL queries
 
 ## How It Works
+> 🇹🇼 命令指示
 
 ### `/jira get <TICKET-KEY>`
+> 🇹🇼 命令指示
 
 1. Fetch the ticket from Jira (via MCP `jira_get_issue` or REST API)
 2. Extract all fields: summary, description, acceptance criteria, priority, labels, linked issues
@@ -59,23 +64,27 @@ Recommended Next Steps:
 ```
 
 ### `/jira comment <TICKET-KEY>`
+> 🇹🇼 命令指示
 
 1. Summarize current session progress (what was built, tested, committed)
 2. Format as a structured comment
 3. Post to the Jira ticket
 
 ### `/jira transition <TICKET-KEY>`
+> 🇹🇼 命令指示
 
 1. Fetch available transitions for the ticket
 2. Show options to user
 3. Execute the selected transition
 
 ### `/jira search <JQL>`
+> 🇹🇼 命令指示
 
 1. Execute the JQL query against Jira
 2. Return a summary table of matching issues
 
 ## Prerequisites
+> 🇹🇼 命令指示
 
 This command requires Jira credentials. Choose one:
 
@@ -92,6 +101,7 @@ export JIRA_API_TOKEN="your-api-token"
 If credentials are missing, stop and direct the user to set them up.
 
 ## Integration with Other Commands
+> 🇹🇼 命令指示
 
 After analyzing a ticket:
 - Use `/plan` to create an implementation plan from the requirements
@@ -101,6 +111,7 @@ After analyzing a ticket:
 - Use `/jira transition` to move the ticket when work is complete
 
 ## Related
+> 🇹🇼 命令指示
 
 - **Skill:** `skills/jira-integration/`
 - **MCP config:** `mcp-configs/mcp-servers.json` → `jira`

@@ -7,6 +7,7 @@ paths:
   - "**/*.cgi"
 ---
 # Perl Patterns
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/patterns.md](../common/patterns.md) with Perl-specific content.
 

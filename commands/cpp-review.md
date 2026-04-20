@@ -1,12 +1,14 @@
 ---
-description: Comprehensive C++ code review for memory safety, modern C++ idioms, concurrency, and security. Invokes the cpp-reviewer agent.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Comprehensive C++ code review for memory safety, modern C++ idioms, concurrency, and security. Invokes the cpp-reviewer agent.
 ---
 
 # C++ Code Review
+> 🇹🇼 命令指示
 
 This command invokes the **cpp-reviewer** agent for comprehensive C++-specific code review.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Identify C++ Changes**: Find modified `.cpp`, `.hpp`, `.cc`, `.h` files via `git diff`
 2. **Run Static Analysis**: Execute `clang-tidy` and `cppcheck`
@@ -16,6 +18,7 @@ This command invokes the **cpp-reviewer** agent for comprehensive C++-specific c
 6. **Generate Report**: Categorize issues by severity
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/cpp-review` when:
 - After writing or modifying C++ code
@@ -25,8 +28,10 @@ Use `/cpp-review` when:
 - Checking for memory safety issues
 
 ## Review Categories
+> 🇹🇼 命令指示
 
 ### CRITICAL (Must Fix)
+> 🇹🇼 命令指示
 - Raw `new`/`delete` without RAII
 - Buffer overflows and use-after-free
 - Data races without synchronization
@@ -35,6 +40,7 @@ Use `/cpp-review` when:
 - Null pointer dereferences
 
 ### HIGH (Should Fix)
+> 🇹🇼 命令指示
 - Rule of Five violations
 - Missing `std::lock_guard` / `std::scoped_lock`
 - Detached threads without proper lifetime management
@@ -42,6 +48,7 @@ Use `/cpp-review` when:
 - Missing `const` correctness
 
 ### MEDIUM (Consider)
+> 🇹🇼 命令指示
 - Unnecessary copies (pass by value instead of `const&`)
 - Missing `reserve()` on known-size containers
 - `using namespace std;` in headers
@@ -49,35 +56,44 @@ Use `/cpp-review` when:
 - Overly complex template metaprogramming
 
 ## Automated Checks Run
+> 🇹🇼 命令指示
 
 ```bash
 # Static analysis
+> 🇹🇼 命令指示
 clang-tidy --checks='*,-llvmlibc-*' src/*.cpp -- -std=c++17
 
 # Additional analysis
+> 🇹🇼 命令指示
 cppcheck --enable=all --suppress=missingIncludeSystem src/
 
 # Build with warnings
+> 🇹🇼 命令指示
 cmake --build build -- -Wall -Wextra -Wpedantic
 ```
 
 ## Example Usage
+> 🇹🇼 命令指示
 
 ```text
 User: /cpp-review
 
 Agent:
 # C++ Code Review Report
+> 🇹🇼 命令指示
 
 ## Files Reviewed
+> 🇹🇼 命令指示
 - src/handler/user.cpp (modified)
 - src/service/auth.cpp (modified)
 
 ## Static Analysis Results
+> 🇹🇼 命令指示
 ✓ clang-tidy: 2 warnings
 ✓ cppcheck: No issues
 
 ## Issues Found
+> 🇹🇼 命令指示
 
 [CRITICAL] Memory Leak
 File: src/service/auth.cpp:45
@@ -104,6 +120,7 @@ void processUser(const User& user) {
 ```
 
 ## Summary
+> 🇹🇼 命令指示
 - CRITICAL: 1
 - HIGH: 1
 - MEDIUM: 0
@@ -112,6 +129,7 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 ```
 
 ## Approval Criteria
+> 🇹🇼 命令指示
 
 | Status | Condition |
 |--------|-----------|
@@ -120,6 +138,7 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 | FAIL: Block | CRITICAL or HIGH issues found |
 
 ## Integration with Other Commands
+> 🇹🇼 命令指示
 
 - Use `/cpp-test` first to ensure tests pass
 - Use `/cpp-build` if build errors occur
@@ -127,6 +146,7 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 - Use `/code-review` for non-C++ specific concerns
 
 ## Related
+> 🇹🇼 命令指示
 
 - Agent: `agents/cpp-reviewer.md`
 - Skills: `skills/cpp-coding-standards/`, `skills/cpp-testing/`

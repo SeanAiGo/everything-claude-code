@@ -1,18 +1,22 @@
 ---
-description: Manage Claude Code session history, aliases, and session metadata.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Manage Claude Code session history, aliases, and session metadata.
 ---
 
 # Sessions Command
+> 🇹🇼 命令指示
 
 Manage Claude Code session history - list, load, alias, and edit sessions stored in `~/.claude/session-data/` with legacy reads from `~/.claude/sessions/`.
 
 ## Usage
+> 🇹🇼 命令指示
 
 `/sessions [list|load|alias|info|help] [options]`
 
 ## Actions
+> 🇹🇼 命令指示
 
 ### List Sessions
+> 🇹🇼 命令指示
 
 Display all sessions with metadata, filtering, and pagination.
 
@@ -58,6 +62,7 @@ for (const s of result.sessions) {
 ```
 
 ### Load Session
+> 🇹🇼 命令指示
 
 Load and display a session's content (by ID or alias).
 
@@ -134,6 +139,7 @@ if (session.metadata.worktree) {
 ```
 
 ### Create Alias
+> 🇹🇼 命令指示
 
 Create a memorable alias for a session.
 
@@ -175,6 +181,7 @@ if (result.success) {
 ```
 
 ### Remove Alias
+> 🇹🇼 命令指示
 
 Delete an existing alias.
 
@@ -206,6 +213,7 @@ if (result.success) {
 ```
 
 ### Session Info
+> 🇹🇼 命令指示
 
 Show detailed information about a session.
 
@@ -257,6 +265,7 @@ if (aliases.length > 0) {
 ```
 
 ### List Aliases
+> 🇹🇼 命令指示
 
 Show all session aliases.
 
@@ -290,11 +299,13 @@ if (aliases.length === 0) {
 ```
 
 ## Operator Notes
+> 🇹🇼 命令指示
 
 - Session files persist `Project`, `Branch`, and `Worktree` in the header so `/sessions info` can disambiguate parallel tmux/worktree runs.
 - For command-center style monitoring, combine `/sessions info`, `git diff --stat`, and the cost metrics emitted by `scripts/hooks/cost-tracker.js`.
 
 ## Arguments
+> 🇹🇼 命令指示
 
 $ARGUMENTS:
 - `list [options]` - List sessions
@@ -310,28 +321,36 @@ $ARGUMENTS:
 - `help` - Show this help
 
 ## Examples
+> 🇹🇼 命令指示
 
 ```bash
 # List all sessions
+> 🇹🇼 命令指示
 /sessions list
 
 # Create an alias for today's session
+> 🇹🇼 命令指示
 /sessions alias 2026-02-01 today
 
 # Load session by alias
+> 🇹🇼 命令指示
 /sessions load today
 
 # Show session info
+> 🇹🇼 命令指示
 /sessions info today
 
 # Remove alias
+> 🇹🇼 命令指示
 /sessions alias --remove today
 
 # List all aliases
+> 🇹🇼 命令指示
 /sessions aliases
 ```
 
 ## Notes
+> 🇹🇼 命令指示
 
 - Sessions are stored as markdown files in `~/.claude/session-data/` with legacy reads from `~/.claude/sessions/`
 - Aliases are stored in `~/.claude/session-aliases.json`

@@ -1,12 +1,14 @@
 ---
-description: Fix C++ build errors, CMake issues, and linker problems incrementally. Invokes the cpp-build-resolver agent for minimal, surgical fixes.
+description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Fix C++ build errors, CMake issues, and linker problems incrementally. Invokes the cpp-build-resolver agent for minimal, surgical fixes.
 ---
 
 # C++ Build and Fix
+> 🇹🇼 命令指示
 
 This command invokes the **cpp-build-resolver** agent to incrementally fix C++ build errors with minimal changes.
 
 ## What This Command Does
+> 🇹🇼 命令指示
 
 1. **Run Diagnostics**: Execute `cmake --build`, `clang-tidy`, `cppcheck`
 2. **Parse Errors**: Group by file and sort by severity
@@ -15,6 +17,7 @@ This command invokes the **cpp-build-resolver** agent to incrementally fix C++ b
 5. **Report Summary**: Show what was fixed and what remains
 
 ## When to Use
+> 🇹🇼 命令指示
 
 Use `/cpp-build` when:
 - `cmake --build build` fails with errors
@@ -24,28 +27,35 @@ Use `/cpp-build` when:
 - After pulling changes that break the build
 
 ## Diagnostic Commands Run
+> 🇹🇼 命令指示
 
 ```bash
 # CMake configure
+> 🇹🇼 命令指示
 cmake -B build -S .
 
 # Build
+> 🇹🇼 命令指示
 cmake --build build 2>&1 | head -100
 
 # Static analysis (if available)
+> 🇹🇼 命令指示
 clang-tidy src/*.cpp -- -std=c++17
 cppcheck --enable=all src/
 ```
 
 ## Example Session
+> 🇹🇼 命令指示
 
 ```text
 User: /cpp-build
 
 Agent:
 # C++ Build Resolution
+> 🇹🇼 命令指示
 
 ## Initial Diagnostics
+> 🇹🇼 命令指示
 
 ```bash
 $ cmake --build build
@@ -57,6 +67,7 @@ src/handler/api.cpp:58:1: error: non-void function does not return a value
 Errors found: 3
 
 ## Fix 1: Undeclared Identifier
+> 🇹🇼 命令指示
 
 File: src/service/user.cpp:25
 Error: use of undeclared identifier 'UserRepository'
@@ -65,14 +76,17 @@ Cause: Missing include
 ```cpp
 // Added include
 #include "repository/user_repository.hpp"
+> 🇹🇼 命令指示
 ```
 
 ```bash
 $ cmake --build build
 # 2 errors remaining
+> 🇹🇼 命令指示
 ```
 
 ## Fix 2: No Matching Function
+> 🇹🇼 命令指示
 
 File: src/handler/api.cpp:42
 Error: no matching function for call to 'process'
@@ -87,9 +101,11 @@ process(std::stoi(params.get("count")));
 ```bash
 $ cmake --build build
 # 1 error remaining
+> 🇹🇼 命令指示
 ```
 
 ## Fix 3: Missing Return
+> 🇹🇼 命令指示
 
 File: src/handler/api.cpp:58
 Error: non-void function does not return a value
@@ -108,9 +124,11 @@ std::optional<User> getUser(const std::string& id) {
 ```bash
 $ cmake --build build
 # Build successful!
+> 🇹🇼 命令指示
 ```
 
 ## Final Verification
+> 🇹🇼 命令指示
 
 ```bash
 $ ctest --test-dir build --output-on-failure
@@ -121,6 +139,7 @@ All tests passed.
 ```
 
 ## Summary
+> 🇹🇼 命令指示
 
 | Metric | Count |
 |--------|-------|
@@ -133,6 +152,7 @@ Build Status: PASS: SUCCESS
 ```
 
 ## Common Errors Fixed
+> 🇹🇼 命令指示
 
 | Error | Typical Fix |
 |-------|-------------|
@@ -146,6 +166,7 @@ Build Status: PASS: SUCCESS
 | `CMake Error` | Fix CMakeLists.txt configuration |
 
 ## Fix Strategy
+> 🇹🇼 命令指示
 
 1. **Compilation errors first** - Code must compile
 2. **Linker errors second** - Resolve undefined references
@@ -154,6 +175,7 @@ Build Status: PASS: SUCCESS
 5. **Minimal changes** - Don't refactor, just fix
 
 ## Stop Conditions
+> 🇹🇼 命令指示
 
 The agent will stop and report if:
 - Same error persists after 3 attempts
@@ -162,12 +184,14 @@ The agent will stop and report if:
 - Missing external dependencies
 
 ## Related Commands
+> 🇹🇼 命令指示
 
 - `/cpp-test` - Run tests after build succeeds
 - `/cpp-review` - Review code quality
 - `/verify` - Full verification loop
 
 ## Related
+> 🇹🇼 命令指示
 
 - Agent: `agents/cpp-build-resolver.md`
 - Skill: `skills/cpp-coding-standards/`

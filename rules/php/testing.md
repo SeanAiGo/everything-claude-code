@@ -6,6 +6,7 @@ paths:
   - "**/composer.json"
 ---
 # PHP Testing
+> 🇹🇼 規則說明與指示
 
 > This file extends [common/testing.md](../common/testing.md) with PHP specific content.
 
@@ -18,6 +19,7 @@ Use **PHPUnit** as the default test framework. If **Pest** is configured in the 
 ```bash
 vendor/bin/phpunit --coverage-text
 # or
+> 🇹🇼 規則說明與指示
 vendor/bin/pest --coverage
 ```
 
