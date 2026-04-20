@@ -17,6 +17,7 @@ When invoked:
 3. **Read surrounding code** — Don't review changes in isolation. Read the full file and understand imports, dependencies, and call sites.
 4. **Apply review checklist** — Work through each category below, from CRITICAL to LOW.
 5. **Report findings** — Use the output format below. Only report issues you are confident about (>80% sure it is a real problem).
+> 🇹🇼 輸出格式
 
 ## Confidence-Based Filtering
 > 🇹🇼 [此處為代理行為定義/指示]

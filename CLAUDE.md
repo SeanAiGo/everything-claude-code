@@ -1,6 +1,7 @@
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+> 🇹🇼 此檔案提供指導
 
 ## Project Overview
 
@@ -21,6 +22,7 @@ node tests/hooks/hooks.test.js
 ## Architecture
 
 The project is organized into several core components:
+> 🇹🇼 此項目分為
 
 - **agents/** - Specialized subagents for delegation (planner, code-reviewer, tdd-guide, etc.)
 - **skills/** - Workflow definitions and domain knowledge (coding standards, patterns, testing)
@@ -47,6 +49,7 @@ The project is organized into several core components:
 - Cross-platform: Windows, macOS, Linux support via Node.js scripts
 - Agent format: Markdown with YAML frontmatter (name, description, tools, model)
 - Skill format: Markdown with clear sections for when to use, how it works, examples
+> 🇹🇼 何時使用
 - Skill placement: Curated in skills/; generated/imported under ~/.claude/skills/. See docs/SKILL-PLACEMENT-POLICY.md
 - Hook format: JSON with matcher conditions and command/notification hooks
 
@@ -55,14 +58,17 @@ The project is organized into several core components:
 Follow the formats in CONTRIBUTING.md:
 - Agents: Markdown with frontmatter (name, description, tools, model)
 - Skills: Clear sections (When to Use, How It Works, Examples)
+> 🇹🇼 何時使用
 - Commands: Markdown with description frontmatter
 - Hooks: JSON with matcher and hooks array
 
 File naming: lowercase with hyphens (e.g., `python-reviewer.md`, `tdd-workflow.md`)
+> 🇹🇼 檔案命名
 
 ## Skills
 
 Use the following skills when working on related files:
+> 🇹🇼 使用以下技能
 
 | File(s) | Skill |
 |---------|-------|

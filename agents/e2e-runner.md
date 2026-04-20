@@ -115,6 +115,7 @@ Common causes: race conditions (use auto-wait locators), network timing (wait fo
 > 🇹🇼 [此處為代理行為定義/指示]
 
 For detailed Playwright patterns, Page Object Model examples, configuration templates, CI/CD workflows, and artifact management strategies, see skill: `e2e-testing`.
+> 🇹🇼 範例
 
 ---
 

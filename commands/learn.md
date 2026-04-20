@@ -32,6 +32,7 @@ Look for:
    - Integration patterns
 
 ## Output Format
+> 🇹🇼 輸出格式
 
 Create a skill file at `~/.claude/skills/learned/[pattern-name].md`:
 

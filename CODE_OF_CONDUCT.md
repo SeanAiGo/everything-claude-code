@@ -15,6 +15,7 @@ diverse, inclusive, and healthy community.
 ## Our Standards
 
 Examples of behavior that contributes to a positive environment for our
+> 🇹🇼 範例
 community include:
 
 * Demonstrating empathy and kindness toward other people
@@ -26,6 +27,7 @@ community include:
   overall community
 
 Examples of unacceptable behavior include:
+> 🇹🇼 範例
 
 * The use of sexualized language or imagery, and sexual attention or
   advances of any kind
@@ -53,6 +55,7 @@ decisions when appropriate.
 This Code of Conduct applies within all community spaces, and also applies when
 an individual is officially representing the community in public spaces.
 Examples of representing our community include using an official e-mail address,
+> 🇹🇼 範例
 posting via an official social media account, or acting as an appointed
 representative at an online or offline event.
 

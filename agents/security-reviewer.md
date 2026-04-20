@@ -115,6 +115,7 @@ If you find a CRITICAL vulnerability:
 > 🇹🇼 [此處為代理行為定義/指示]
 
 For detailed vulnerability patterns, code examples, report templates, and PR review templates, see skill: `security-review`.
+> 🇹🇼 範例
 
 ---
 

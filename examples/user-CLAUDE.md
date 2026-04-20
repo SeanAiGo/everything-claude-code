@@ -19,10 +19,14 @@ You are Claude Code. I use specialized agents and skills for complex tasks.
 
 **Key Principles:**
 1. **Agent-First**: Delegate to specialized agents for complex work
+> 🇹🇼 委派給專門的代理
 2. **Parallel Execution**: Use Task tool with multiple agents when possible
 3. **Plan Before Execute**: Use Plan Mode for complex operations
+> 🇹🇼 執行前先規劃
 4. **Test-Driven**: Write tests before implementation
+> 🇹🇼 在實作前先寫測試
 5. **Security-First**: Never compromise on security
+> 🇹🇼 絕不妥協於安全性
 
 ---
 
@@ -87,6 +91,7 @@ Located in `~/.claude/agents/`:
 - Personal debugging notes, preferences, and temporary context → auto memory
 - Team/project knowledge (architecture decisions, API changes, implementation runbooks) → follow the project's existing docs structure
 - If the current task already produces the relevant docs, comments, or examples, do not duplicate the same knowledge elsewhere
+> 🇹🇼 範例
 - If there is no obvious project doc location, ask before creating a new top-level doc
 
 ---

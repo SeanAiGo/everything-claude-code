@@ -94,6 +94,7 @@ psql -c "SELECT indexrelname, idx_scan, idx_tup_read FROM pg_stat_user_indexes O
 > 🇹🇼 [此處為代理行為定義/指示]
 
 For detailed index patterns, schema design examples, connection management, concurrency strategies, JSONB patterns, and full-text search, see skills: `postgres-patterns` and `database-migrations`.
+> 🇹🇼 範例
 
 ---
 

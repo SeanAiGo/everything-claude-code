@@ -9,6 +9,7 @@ Everything Claude Code (ECC) is a production-ready AI coding plugin with 30 spec
 3. **Security-First** — validate inputs, protect secrets, and keep safe defaults.
 4. **Immutability** — prefer explicit state transitions over mutation.
 5. **Plan Before Execute** — complex changes should be broken into deliberate phases.
+> 🇹🇼 執行前先規劃
 
 ## Agent Orchestration Philosophy
 ECC is designed so specialists are invoked proactively: planners for implementation strategy, reviewers for code quality, security reviewers for sensitive code, and build resolvers when the toolchain breaks.

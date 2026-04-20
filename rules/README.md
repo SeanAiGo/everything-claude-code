@@ -27,7 +27,9 @@ rules/
 ```
 
 - **common/** contains universal principles — no language-specific code examples.
+> 🇹🇼 範例
 - **Language directories** extend the common rules with framework-specific patterns, tools, and code examples. Each file references its common counterpart.
+> 🇹🇼 範例
 
 ## Installation
 

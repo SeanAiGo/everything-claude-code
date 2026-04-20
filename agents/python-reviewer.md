@@ -105,6 +105,7 @@ Fix: What to change
 > 🇹🇼 [此處為代理行為定義/指示]
 
 For detailed Python patterns, security examples, and code samples, see skill: `python-patterns`.
+> 🇹🇼 範例
 
 ---
 

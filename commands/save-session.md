@@ -47,6 +47,7 @@ Create `~/.claude/session-data/YYYY-MM-DD-<short-id>-session.tmp`, using today's
 - Recommended style for new files: lowercase letters, digits, and hyphens with 8+ characters to avoid collisions
 
 Valid examples: `abc123de`, `a1b2c3d4`, `frontend-worktree-1`, `ChezMoi_2`
+> 🇹🇼 範例
 Avoid for new files: `A`, `test_id1`, `ABC123de`
 
 Full valid filename example: `2024-01-15-abc123de-session.tmp`

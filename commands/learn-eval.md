@@ -85,6 +85,7 @@ origin: auto-extracted
 **Guideline dimensions** (informing the verdict, not scored):
 
 - **Specificity & Actionability**: Contains code examples or commands that are immediately usable
+> 🇹🇼 範例
 - **Scope Fit**: Name, trigger conditions, and content are aligned and focused on a single pattern
 - **Uniqueness**: Provides value not covered by existing skills (informed by checklist results)
 - **Reusability**: Realistic trigger scenarios exist in future sessions

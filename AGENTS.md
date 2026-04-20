@@ -7,10 +7,15 @@ This is a **production-ready AI coding plugin** providing 48 specialized agents,
 ## Core Principles
 
 1. **Agent-First** — Delegate to specialized agents for domain tasks
+> 🇹🇼 委派給專門的代理
 2. **Test-Driven** — Write tests before implementation, 80%+ coverage required
+> 🇹🇼 在實作前先寫測試
 3. **Security-First** — Never compromise on security; validate all inputs
+> 🇹🇼 絕不妥協於安全性
 4. **Immutability** — Always create new objects, never mutate existing ones
+> 🇹🇼 永遠建立新物件
 5. **Plan Before Execute** — Plan complex features before writing code
+> 🇹🇼 執行前先規劃
 
 ## Available Agents
 
@@ -75,6 +80,7 @@ Use parallel execution for independent operations — launch multiple agents sim
 ## Coding Style
 
 **Immutability (CRITICAL):** Always create new objects, never mutate. Return new copies with changes applied.
+> 🇹🇼 永遠建立新物件
 
 **File organization:** Many small files over few large ones. 200-400 lines typical, 800 max. Organize by feature/domain, not by type. High cohesion, low coupling.
 
@@ -107,6 +113,7 @@ Troubleshoot failures: check test isolation → verify mocks → fix implementat
 ## Development Workflow
 
 1. **Plan** — Use planner agent, identify dependencies and risks, break into phases
+> 🇹🇼 識別相依性
 2. **TDD** — Use tdd-guide agent, write tests first, implement, refactor
 3. **Review** — Use code-reviewer agent immediately, address CRITICAL/HIGH issues
 4. **Capture knowledge in the right place**

@@ -41,6 +41,7 @@ For sharing memory across sessions, a skill or command that summarizes and check
 
 ![Session Storage File Tree](./assets/images/longform/03-session-storage.png)
 *Example of session storage -> <https://github.com/affaan-m/everything-claude-code/tree/main/examples/sessions>*
+> 🇹🇼 範例
 
 Claude creates a file summarizing current state. Review it, ask for edits if needed, then start fresh. For the new conversation, just provide the file path. Particularly useful when you're hitting context limits and need to continue complex work. These files should contain:
 - What approaches worked (verifiably with evidence)

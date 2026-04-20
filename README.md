@@ -134,6 +134,7 @@ This repo is the raw code only. The guides explain everything.
 ### v1.4.1 — Bug Fix (Feb 2026)
 
 - **Fixed instinct import content loss** — `parse_instinct_file()` was silently dropping all content after frontmatter (Action, Evidence, Examples sections) during `/instinct-import`. ([#148](https://github.com/affaan-m/everything-claude-code/issues/148), [#161](https://github.com/affaan-m/everything-claude-code/pull/161))
+> 🇹🇼 範例
 
 ### v1.4.0 — Multi-Language Rules, Installation Wizard & PM2 (Feb 2026)
 
@@ -601,6 +602,7 @@ npx ecc-agentshield init
 **The `--opus` flag** runs three Claude Opus 4.6 agents in a red-team/blue-team/auditor pipeline. The attacker finds exploit chains, the defender evaluates protections, and the auditor synthesizes both into a prioritized risk assessment. Adversarial reasoning, not just pattern matching.
 
 **Output formats:** Terminal (color-graded A-F), JSON (CI pipelines), Markdown, HTML. Exit code 2 on critical findings for build gates.
+> 🇹🇼 輸出格式
 
 Use `/security-scan` in Claude Code to run it, or add to CI with the [GitHub Action](https://github.com/affaan-m/agentshield).
 
@@ -985,6 +987,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). The short version:
 2. Create your skill in `skills/your-skill-name/SKILL.md` (with YAML frontmatter)
 3. Or create an agent in `agents/your-agent.md`
 4. Submit a PR with a clear description of what it does and when to use it
+> 🇹🇼 何時使用
 </details>
 
 ---

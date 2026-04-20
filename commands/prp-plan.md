@@ -155,6 +155,7 @@ If the feature involves external libraries, APIs, or unfamiliar technology:
 
 1. Search the web for official documentation
 2. Find usage examples and best practices
+> 🇹🇼 範例
 3. Identify version-specific gotchas
 
 Format each finding as:
@@ -532,6 +533,7 @@ Before finalizing, verify the plan against these checklists:
 > 🇹🇼 命令指示
 - [ ] All relevant files discovered and documented
 - [ ] Naming conventions captured with examples
+> 🇹🇼 範例
 - [ ] Error handling patterns documented
 - [ ] Test patterns identified
 - [ ] Dependencies listed
@@ -546,6 +548,7 @@ Before finalizing, verify the plan against these checklists:
 ### Pattern Faithfulness
 > 🇹🇼 命令指示
 - [ ] Code snippets are actual codebase examples (not invented)
+> 🇹🇼 範例
 - [ ] SOURCE references point to real files and line numbers
 - [ ] Patterns cover naming, errors, logging, data access, and tests
 - [ ] New code will be indistinguishable from existing code

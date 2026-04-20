@@ -101,3 +101,4 @@ Read `pom.xml`, `build.gradle`, or `build.gradle.kts` to determine the build too
 - **Block**: CRITICAL or HIGH issues found
 
 For detailed Spring Boot patterns and examples, see `skill: springboot-patterns`.
+> 🇹🇼 範例

@@ -64,6 +64,7 @@ Look for these pattern types:
 > 🇹🇼 命令指示
 
 Output format:
+> 🇹🇼 輸出格式
 
 ```markdown
 ---

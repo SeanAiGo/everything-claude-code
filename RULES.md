@@ -2,10 +2,13 @@
 
 ## Must Always
 - Delegate to specialized agents for domain tasks.
+> 🇹🇼 委派給專門的代理
 - Write tests before implementation and verify critical paths.
+> 🇹🇼 在實作前先寫測試
 - Validate inputs and keep security checks intact.
 - Prefer immutable updates over mutating shared state.
 - Follow established repository patterns before inventing new ones.
+> 🇹🇼 遵循既有的儲存庫模式
 - Keep contributions focused, reviewable, and well-described.
 
 ## Must Never
@@ -26,6 +29,7 @@
 - Each skill includes YAML frontmatter with `name`, `description`, and `origin`.
 - Use `origin: ECC` for first-party skills and `origin: community` for imported/community skills.
 - Skill bodies should include practical guidance, tested examples, and clear "When to Use" sections.
+> 🇹🇼 何時使用
 
 ## Hook Format
 - Hooks use matcher-driven JSON registration and shell or Node entrypoints.

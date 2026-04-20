@@ -161,6 +161,7 @@ Short version:
 - [ ] Focused on one domain/technology (not too broad)
 - [ ] Includes "When to Activate" section for auto-activation
 - [ ] Includes practical, copy-pasteable code examples
+> 🇹🇼 範例
 - [ ] Shows anti-patterns (what NOT to do)
 - [ ] Under 500 lines (800 max)
 - [ ] Uses clear section headers
@@ -309,6 +310,7 @@ tool == "Bash" && tool_input.command matches "git push"
 ```
 
 ### Hook Examples
+> 🇹🇼 範例
 
 ```json
 // Block dev servers outside tmux
@@ -399,6 +401,7 @@ What the user receives.
 Skills and agents can use **MCP (Model Context Protocol)** tools to pull in up-to-date data instead of relying only on training data. This is especially useful for documentation.
 
 - **Context7** is an MCP server that exposes `resolve-library-id` and `query-docs`. Use it when the user asks about libraries, frameworks, or APIs so answers reflect current docs and code examples.
+> 🇹🇼 範例
 - When contributing **skills** that depend on live docs (e.g. setup, API usage), describe how to use the relevant MCP tools (e.g. resolve the library ID, then query docs) and point to the `documentation-lookup` skill or Context7 as the pattern.
 - When contributing **agents** that answer docs/API questions, include the Context7 MCP tool names (e.g. `mcp__context7__resolve-library-id`, `mcp__context7__query-docs`) in the agent's tools and document the resolve → query workflow.
 - **mcp-configs/mcp-servers.json** includes a Context7 entry; users enable it in their harness (e.g. Claude Code, Cursor) to use the documentation-lookup skill (in `skills/documentation-lookup/`) and the `/docs` command.
@@ -488,6 +491,7 @@ How you tested this.
 ---
 
 ## File Naming
+> 🇹🇼 檔案命名
 
 - Use lowercase with hyphens: `python-reviewer.md`
 - Be descriptive: `tdd-workflow.md` not `workflow.md`

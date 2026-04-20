@@ -54,6 +54,7 @@ Read changed files fully. Apply the review checklist below, checking surrounding
 > 🇹🇼 [此處為代理行為定義/指示]
 
 Use the output format below. Only report issues with >80% confidence.
+> 🇹🇼 輸出格式
 
 **Noise control:**
 - Consolidate similar issues (e.g. "5 widgets missing `const` constructors" not 5 separate findings)

@@ -22,6 +22,7 @@ The Feature Implementation Workflow describes the development pipeline: research
    - Use **planner** agent to create implementation plan
    - Generate planning docs before coding: PRD, architecture, system_design, tech_doc, task_list
    - Identify dependencies and risks
+> 🇹🇼 識別相依性
    - Break down into phases
 
 2. **TDD Approach**

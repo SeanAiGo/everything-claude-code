@@ -116,5 +116,6 @@ Write your output to `gan-harness/spec.md` in the project root. Structure:
 
 1. Read the user's brief prompt
 2. Research: If the prompt references a specific type of app, read any existing examples or specs in the codebase
+> 🇹🇼 範例
 3. Write the full spec to `gan-harness/spec.md`
 4. Also write a concise `gan-harness/eval-rubric.md` with the evaluation criteria in a format the Evaluator can consume directly

@@ -33,6 +33,7 @@ The planner agent will:
 1. **Analyze the request** and restate requirements in clear terms
 2. **Break down into phases** with specific, actionable steps
 3. **Identify dependencies** between components
+> 🇹🇼 識別相依性
 4. **Assess risks** and potential blockers
 5. **Estimate complexity** (High/Medium/Low)
 6. **Present the plan** and WAIT for your explicit confirmation

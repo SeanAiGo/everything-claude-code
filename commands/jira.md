@@ -1,11 +1,13 @@
 ---
 description: 📝 【文件定位】這是一個命令（Command）定義檔案。此命令的功能：Retrieve a Jira ticket, analyze requirements, update status, or add comments. Uses the jira-integration skill and MCP or REST API.
+> 🇹🇼 分析需求
 ---
 
 # Jira Command
 > 🇹🇼 命令指示
 
 Interact with Jira tickets directly from your workflow — fetch tickets, analyze requirements, add comments, and transition status.
+> 🇹🇼 分析需求
 
 ## Usage
 > 🇹🇼 命令指示

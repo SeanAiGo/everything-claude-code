@@ -102,3 +102,4 @@ cargo build --release 2>&1 | head -50
 - **Block**: CRITICAL or HIGH issues found
 
 For detailed Rust code examples and anti-patterns, see `skill: rust-patterns`.
+> 🇹🇼 範例

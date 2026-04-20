@@ -71,3 +71,4 @@ Top 3 Actions:
 $ARGUMENTS:
 - `repo|hooks|skills|commands|agents` (optional scope)
 - `--format text|json` (optional output format)
+> 🇹🇼 輸出格式

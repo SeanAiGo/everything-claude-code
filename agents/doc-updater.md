@@ -93,6 +93,7 @@ Links to other codemaps
 1. **Extract** — Read JSDoc/TSDoc, README sections, env vars, API endpoints
 2. **Update** — README.md, docs/GUIDES/*.md, package.json, API docs
 3. **Validate** — Verify files exist, links work, examples run, snippets compile
+> 🇹🇼 範例
 
 ## Key Principles
 > 🇹🇼 [此處為代理行為定義/指示]
@@ -109,6 +110,7 @@ Links to other codemaps
 - [ ] Codemaps generated from actual code
 - [ ] All file paths verified to exist
 - [ ] Code examples compile/run
+> 🇹🇼 範例
 - [ ] Links tested
 - [ ] Freshness timestamps updated
 - [ ] No obsolete references
